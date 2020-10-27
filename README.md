@@ -2,10 +2,10 @@
 ## Investigating International Tourism over 2008 - 2018, and the relationship to GDP and world events
 
 ## Table of Contents
-- (Background)[##Background]
+- (Background)[#Background]
 
 
-## Background
+# Background
 
 ## Motivating Questions
 
