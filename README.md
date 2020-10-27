@@ -1,6 +1,22 @@
 # Where did you Come From, Where did you go? International Tourism Over 10 Years
 ## Investigating International Tourism over 2008 - 2018, and the relationship to GDP and world events
 
+## Table of Contents
+- (Background)[##Background]
+
+
+## Background
+
+## Motivating Questions
+
+## The Data
+
+## EDA 
+
+## Analysis 
+
+## Conclusion and Further Analysis
+
 ### Key Definitions from the [OECD](https://stats.oecd.org/Index.aspx?QueryId=95071)
 
 Tourism can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. 
