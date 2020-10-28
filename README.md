@@ -27,7 +27,7 @@ These countries are, from the Inbound Dataset:
 - Tourism refers to the activity of visitors. 
 - A visitor is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - A tourist is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
-Inbound tourism comprises the activities of a non-resident visitor within the country of reference.
+- Inbound tourism comprises the activities of a non-resident visitor within the country of reference.
 - Hotels and similar establishments:
 Data refer to NACE Rev. 2 codes 55.10 Hotels and similar establishments and 55.20 Holiday and other short-stay accommodation or ISIC Rev. 4 code 5510 Short term accommodation activities 
 - Other collective establishments:
