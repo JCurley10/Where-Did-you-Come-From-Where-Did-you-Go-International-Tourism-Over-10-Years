@@ -144,8 +144,9 @@ def tourists_in_from_supply_graph(action):
     ax.plot(italy_in['Year'], italy_in['Value'], color = 'deepskyblue', ls = 'solid',  label = 'Italy', marker = 'o')
     ax.plot(germany_in['Year'], germany_in['Value'], color = 'steelblue', ls = ":", lw = 2, label = 'Germany', marker = 'o')
     ax.plot(austria_in['Year'], austria_in['Value'], color = "cadetblue", ls = 'dashdot', label = 'Austria', marker = 'o')
-    ax.set_title('Incoming Tourists Over Time, \n for Countries with top tourism numbers \n reported in the Supply Survey*', fontsize = 20)
+    ax.set_title('Incoming Tourists Over Time, \n for Countries with top tourism numbers \n reported in the Supply Survey*', fontsize = 24)
     plt.legend(fontsize = 16, numpoints = 1)
+    plt.tight_layout()
 
     if action == 'show':
         plt.show()
@@ -185,15 +186,19 @@ def tourists_in_from_demand_graph(action):
     ax.plot(sweden_in['Year'], sweden_in['Value'], color = 'teal', ls = ":", lw = 2, label = 'Sweden', marker = 'o')
     ax.plot(ireland_in['Year'], ireland_in['Value'], color = "lightseagreen", ls = 'dashdot', label = 'Ireland', marker = 'o')
     ax.plot(malta_in['Year'], malta_in['Value'], color = "darkcyan", ls = 'solid', label = 'Malta', marker = 'o')
-    ax.plot(iceland_in['Year'], iceland_in['Value'], color = "mediumaquamarine", ls = 'dotted', label = 'Iceland', marker = 'o')
-    ax.set_title('Incoming Tourists Over Time, \n for Countries with most total reported tourists \n from the Demand Survey', fontsize = 20)
+    ax.plot(iceland_in['Year'], iceland_in['Value'], color = "midnightblue", ls = 'dotted', label = 'Iceland', marker = 'o')
+    ax.set_title('Incoming Tourists Over Time, \n for Countries with most total reported tourists \n from the Demand Survey', fontsize = 24)
     plt.legend(fontsize = 16, numpoints = 1)
+    plt.tight_layout()
     
     if action == 'show':
         plt.show()
         
     elif action == "save"
         plt.savefig('../images/most_incoming_demand.png')
+
+
+
 
 
 ''''''
