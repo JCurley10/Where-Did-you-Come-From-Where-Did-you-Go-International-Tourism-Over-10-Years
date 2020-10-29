@@ -109,7 +109,7 @@ A look at a cleaned Outbound dataset for outbound tourists from a country, by or
 ## Analysis 
 <table>
   
-<tr><th>Percent Change of Outbound Tourists</th><th>Percent Change of Inbound Tourists</th></tr>
+<tr><th>Percent Change of Outbound Tourists</th><th>Percent Change of Inbound Tourists</th><th>Percent Change of GDP</th></tr>
 
 <tr><td>
   
@@ -176,6 +176,39 @@ A look at a cleaned Outbound dataset for outbound tourists from a country, by or
 | Estonia         | 0.14             |
 | France          | 0.12             |
 | Sweden          | -0.06            |
+
+</td><td>
+  
+| Country Name    | Cum. Pct. Change |
+|-----------------|------------------|
+| Malta           | 0.15             |
+| Estonia         | 0.14             |
+| Romania         | 0.14             |
+| Ireland         | 0.14             |
+| Czech Republic  | 0.13             |
+| Latvia          | 0.13             |
+| Lithuania       | 0.12             |
+| Poland          | 0.12             |
+| Slovenia        | 0.11             |
+| Hungary         | 0.11             |
+| Slovak Republic | 0.11             |
+| Luxembourg      | 0.10             |
+| Croatia         | 0.10             |
+| Netherlands     | 0.10             |
+| Austria         | 0.09             |
+| Portugal        | 0.09             |
+| Norway          | 0.09             |
+| Spain           | 0.08             |
+| Finland         | 0.08             |
+| Denmark         | 0.08             |
+| Belgium         | 0.08             |
+| Germany         | 0.08             |
+| France          | 0.07             |
+| Greece          | 0.07             |
+| Italy           | 0.07             |
+| Iceland         | 0.05             |
+| Switzerland     | 0.04             |
+| Sweden          | 0.03             |  
 </td></tr> </table>
 
 ## Conclusion and Further Analysis
