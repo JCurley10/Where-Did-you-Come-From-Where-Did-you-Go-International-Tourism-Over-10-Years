@@ -191,46 +191,78 @@ def find_percent_change(indicator, change_type):
             elif country in countries_in_demand_only:
                 if change_type == "cumulative":
                     percent_dictionary[country] = inbound_demand_to_graph.loc[country].reset_index()['Value'].pct_change().cumsum()
-                elif change_type == "regular"
+                elif change_type == "regular":
                     percent_dictionary[country] = inbound_demand_to_graph.loc[country].reset_index()['Value'].pct_change()
         
     elif indicator == "outbound":
         for country in list(all_outbound_tourists_df['Country'].unique()):
             if change_type == "cumulative":
                 percent_dictionary[country] = outbound_to_graph.loc[country].reset_index()['Outgoing_Tourists'].pct_change().cumsum()
-            elif change_type == "regular"
-                percent_dictionary[country] = outbound_to_graph.loc[country].reset_index()['Outgoing_Tourists'].pct_change().
+            elif change_type == "regular":
+                percent_dictionary[country] = outbound_to_graph.loc[country].reset_index()['Outgoing_Tourists'].pct_change()
     return percent_dictionary
-    
-# Print out the dictionary that shows the cumulative percent change of 
-# inbound and outbound tourists with country as the key, and percent change
 
+
+# To CHECK Print out the dictionary that shows the cumulative percent change of 
+# inbound and outbound tourists with country as the key, and percent change
 pct_dictionary_in = find_percent_change("inbound", "regular")
 # for k, v in dictionary_in.items():
 #     print (f'{k}, {v}')
-    
+        
 pct_dictionary_out = find_percent_change("outbound", "regular")
 # for k, v in dictionary_out.items():
 #     print (f'{k}, {v}')
 
 
+## TO DO: Write a function that takes indicator and change_type, and makes the dataframe with the given percent change dictionaries
+
+
+# Find the country with the highest cumulative percent change inbound and outbound 
+# Use these lists to decide who I am going to highlight
+#  
+#Cumulative inbound df
+cumpct_dictionary_in = find_percent_change("inbound", "cumulative")
+cum_pct_change_in = pd.DataFrame(cumpct_dictionary_in)
+cum_pct_change_in = cum_pct_change_in.rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018})
+cum_pct_change_in = cum_pct_change_in.T
+
+#cumulative outbound df
+cumpct_dictionary_out = find_percent_change("outbound", "cumulative")
+cum_pct_change_out = pd.DataFrame(cumpct_dictionary_out)
+cum_pct_change_out = cum_pct_change_out.rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018})
+cum_pct_change_out = cum_pct_change_out.T 
+
+# Make dataframes of the percent changes to graph later 
+pct_change_in = pd.DataFrame(pct_dictionary_in).rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018}).T
+pct_change_out = pct_change_in = pd.DataFrame(pct_dictionary_out).rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018}).T
+
+'''
+GDP DATA
+'''
+
 if __name__ == '__main__':
-    # print ('INBOUND DATA STUFF')
+
     # print (inbound_df.head())
     # print (all_inbound_tourists_df.columns)
     # print (inbound_supply_df.head())
     # print (inbound_demand_df.head())
 
     czech_rep_in = make_df_to_graph('Czech Republic', 'inbound').reset_index()
+    # print (czech_rep_in)
     czech_rep_out = make_df_to_graph('Czech Republic', 'outbound').reset_index()
+    #print (czech_rep_out)
     czech_rep = get_country_over_time('Czech Republic', 'inbound')
-    # print (czech_rep_in) #check that the make_df_to_graph('Czech Republic', 'inbound') is correct
-    # print (czech_rep_out)
     # print (czech_rep)
-    # print ('\n')
-    # print ('OUTBOUND DATA STUFF')
+
     # print (outbound_df.head())
     # print (all_outbound_tourists_df.head())
     # print (all_outbound_tourists_df[all_outbound_tourists_df['Country']=='Germany'])
     # print (merged_inbound_and_outbound_tourists_df.columns)
+
+    ## Find the top countries with most percent change of in and outbound tourists
+    print ("list of cumulative percent change for incoming tourists:", cum_pct_change_in.max(axis = 1).sort_values(ascending = False))
+    print ("list of cumulative percent change for outgoing tourists", cum_pct_change_out.max(axis = 1).sort_values(ascending = False))
+
+    
+    
     pass
