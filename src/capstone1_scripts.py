@@ -3,7 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-inbound = pd.read_csv('data/TOURISM_INBOUND_29032020041047359.csv')
+
+'''
+Inbound Data
+'''
+
+inbound = pd.read_csv('../data/TOURISM_INBOUND_29032020041047359.csv')
 
 #Only relevant columns to be included 
 inbound_df = inbound[['Country', 'Variable', 'SOURCE', 'Year', 'Value']]
@@ -18,102 +23,158 @@ schen_eu_countries = ['Austria', 'Belgium', 'Czech Republic',
                     'Estonia', 'Latvia', 'Lithuania', 'Malta', 
                     'Romania', 'Slovenia']
 
+#All possibile "Variables", total = 87
+inbound_df.Variable.unique()
+
 #DataFrame that includes just the countries from the union of the Schegen Region and EU
-schen_eu = inbound_df[inbound_df['Country'].isin(schen_eu_countries)]
+schen_eu_df = inbound_df[inbound_df['Country'].isin(schen_eu_countries)]
 
-#29 countries in total
-num_countries = len(schen_eu['Country'].unique())
-# Check are the countries from the schen_eu_countries above
-countries = schen_eu['Country'].unique() 
+#DataFrame that includes only data from Overnight visitors (tourists) variable
+all_inbound_tourists_df = schen_eu_df[schen_eu_df['Variable']=='Overnight visitors (tourists)']
+# array of all countries in the dataframe, to check membership against
+all_countries = all_inbound_tourists_df['Country'].unique()
 
 
-def get_tourists_from_source(source, year, variable = 'Overnight visitors (tourists)' , df = schen_eu):
+
+# Make the DataFrames to display the countries with SOURCE = SUPPLY and SOURCE = DEMAND, separately
+
+#lists of countries per source
+countries_in_supply = list(all_inbound_tourists_df[all_inbound_tourists_df["SOURCE"]=='SUPPLY']['Country'].unique())
+countries_in_demand =  list(all_inbound_tourists_df[all_inbound_tourists_df["SOURCE"]=='DEMAND']['Country'].unique())
+countries_in_demand_only = list(set(countries_in_demand).difference(set(countries_in_supply)))
+
+#all years to consider
+all_years = list(range(2008, 2019))   
+
+
+# Function to Make Relevant DataFrames
+def make_inbound_dataframe(source, countries_list, df = all_inbound_tourists_df):
     '''
     Returns a dataframe that only includes the information from the
-    SOURCE = 'DEMAND' column from the input dataframe
-
+    desired SOURCE column from the input dataframe
+    
     Parameters:
         
-        source (str): the source from which to collect the data.
+        source (lst of str): the source from which to collect the data.
             choices are "SUPPLY" or "DEMAND"
 
-        year (int): the year to collect the information from
-
-        variable (str): the description of the tourism data (aka, 'From where) to collect. 
-            Default to 'Overnight visitors (tourists)' to represent all  
-            overnight travelers, defined here as 'tourists'
+        countries_list (lst): the list of countries to consider 
 
         df (pandas DataFrame): the dataframe from which we are getting the values.
-            Default to schen_eu
+            Default to all_inbound_tourists_df
 
     Returns:
         a pandas Dataframe that includes the information from the DEMAND column 
-
     '''
-    return schen_eu[(schen_eu['SOURCE']==source) & (schen_eu['Year']== year) & (schen_eu['Variable']== variable)].sort_values('Country') 
-     
-#get 'Overnight visitors (tourists)' from both the supply and demand sources in 2008
-tot_tourists_from_supply_08 = get_tourists_from_source('SUPPLY', 2008, variable = 'Overnight visitors (tourists)' , df = schen_eu)
 
-tot_tourists_from_demand_08 = get_tourists_from_source('DEMAND', 2008, variable = 'Overnight visitors (tourists)' , df = schen_eu)
+    return df[(df['SOURCE']==source) & (df['Year'].isin(all_years)) & df['Country'].isin(countries_list)]
 
-#merge the two sources to see which datasets come from SUPPLY or DEMAND surveys 
+# set two dataframes to have the inbound data relevent to the survey 
+inbound_supply_df = make_inbound_dataframe('SUPPLY', countries_in_supply)
+inbound_demand_df = make_inbound_dataframe('DEMAND', countries_in_demand_only)
 
-overnight_visitors = pd.merge(tot_tourists_from_supply_08, tot_tourists_from_demand_08, on=['Year', 'Variable', 'Country'], 
-         suffixes = ['.supply', '.demand'], how = 'outer').sort_values('Country')
 
-#Check that all 29 countries 'Overnight visitors (tourists)' variable as an idicator
-overnight_visitors_countries = schen_eu[schen_eu['Variable']=='Overnight visitors (tourists)']['Country'].unique()
+####### CHECK THIS AGAIN #####
+##### dataframes where countries are indices 
+inbound_supply_to_graph = inbound_supply_df.groupby(['Country', 'Year']).sum()
+inbound_demand_to_graph = inbound_demand_df.groupby(['Country', 'Year']).sum()
 
-''' >> prints ['Austria' 'Belgium' 'Czech Republic' 'Denmark' 'Finland' 'France'
- 'Germany' 'Greece' 'Hungary' 'Iceland' 'Ireland' 'Italy' 'Luxembourg'
- 'Netherlands' 'Norway' 'Poland' 'Portugal' 'Slovak Republic' 'Spain'
- 'Sweden' 'Switzerland' 'Croatia' 'Estonia' 'Latvia' 'Lithuania' 'Malta'
- 'Romania' 'Slovenia'] ''' #Missing Bulgaria -- > use the "Total international arrival" from DEMAND as this measure?
+##merge the inbound supply and demand dfs
 
-#Identify which countires report information from supply and demand surveys 
+
+'''---------------------------------------------------------------'''
 
 '''
-insert work  here
+Outbound Data
 '''
-supply_countries = 
-demand_only_countries = 
 
-def get_country_over_time(source, country, variable = 'Overnight visitors (tourists)' , df = schen_eu):
+# read in the outbound dataset and rename the value to be outgoing tourists
+
+outbound = pd.read_csv('../data/TOURISM_OUTBOUND_29032020041014703.csv')
+outbound_df = outbound[['Country', 'Variable', 'Year', 'Value']]
+outbound_df = outbound_df.rename(columns = {"Value": "Outgoing_Tourists"})
+pd.options.display.float_format = '{:.2f}'.format
+
+#make the DF with just the important information, where Variable = Overnight visitors (tourists) 
+all_outbound_tourists_df = outbound_df[(outbound_df['Country'].isin(schen_eu_countries) 
+                        & (outbound_df['Variable']=='Overnight visitors (tourists)'))]
+
+#Make a df with indices == countries 
+outbound_to_graph = all_outbound_tourists_df.groupby(['Country', 'Year']).sum()
+
+#make DF to graph outbounds
+merged_inbound = pd.merge(inbound_supply_df, inbound_demand_df, on=['Year', 'Variable', 'Country'], 
+         suffixes = ['.supply', '.demand'], how = 'outer').sort_values(['Country', 'Year'])
+
+##MAYBE NOT NECESSARY
+# Merge the inbound and outbound datasets
+
+merged_inbound_and_outbound_tourists_df = pd.merge(merged_inbound, all_outbound_tourists_df, on=['Year', 'Variable', 'Country'], 
+         suffixes = ['.inbound', '.outbound'], how = 'outer').sort_values(['Country', 'Year'])
+
+
+
+def get_country_over_time(country, indicator):
 
     '''
     Returns a dataframe that only includes the information from the
-    SOURCE = 'DEMAND' column from the input dataframe
+    apropriate column from the input dataframe, given a country name 
+    and input dataframe indictaor 
 
     Parameters:
-        
-        source (str): the source from which to collect the data.
-            choices are "SUPPLY" or "DEMAND"
-
+    
         country (str): which country to look at over time
 
-        variable (str): the description of the tourism data (aka, 'From where) to collect. 
-            Default to 'Overnight visitors (tourists)' to represent all  
-            overnight travelers, defined here as 'tourists'
-
-        df (pandas DataFrame): the dataframe from which we are getting the values.
-            Default to schen_eu
-
+        df (pandas DataFrame): the dataframe from which we are getting the Values.
+            
+        indicator (str): indicate which value we are looking at; 
+            choices are inbound or outbound
+            
     Returns:
-        a pandas Dataframe that includes the information from the SOURCE column 
+    
+        a pandas Dataframe that includes the information that 
+        country's tourism information, and the SOURCE field
+        if indicator == 'inbound'
 
     '''
-    return schen_eu[(schen_eu['SOURCE']==source) & (schen_eu['Country']== country) & (schen_eu['Variable']== variable)].sort_values('Year') 
+    if indicator == 'inbound':
+        if country in countries_in_supply:
+            df = inbound_supply_df
+        elif country in countries_in_demand_only:
+            df = inbound_demand_df 
+    
+    elif indicator == 'outbound':
+        df = all_outbound_tourists_df
+        
+    else:
+        print ("Please enter an appropriate Country and/or indicator(inbound or outbound)")
+        
+    
+    return df[df['Country']==country]
 
 
-#print the datasets
+#Make individual dataframes by country to then graph
+def make_df_to_graph(country, indicator):
 
-# for country in schen_eu_countries:
-#     if country in supply_countries:
-#         for country in supply_countries:
-#             print (get_country_over_time('SUPPLY', country, variable = 'Overnight visitors (tourists)' , df = schen_eu))
-#             print ('\n')
-            
-#     elif country in demand_countries:
-#         for country in demand_countries:
-#             print (get_country_over_time('DEMAND', country, variable = 'Overnight visitors (tourists)' , df = schen_eu))
+    return get_country_over_time(country, indicator).groupby(['Country', 'Year']).sum()
+
+czech_rep_in = make_df_to_graph('Czech Republic', 'inbound').reset_index()
+czech_rep_out = make_df_to_graph('Czech Republic', 'outbound').reset_index()
+czech_rep = get_country_over_time('Czech Republic', 'inbound')
+
+if __name__ == '__main__':
+    # print ('INBOUND DATA STUFF')
+    # print (inbound_df.head())
+    # print (all_inbound_tourists_df.columns)
+    # print (inbound_supply_df.head())
+    # print (inbound_demand_df.head())
+    # print (czech_rep_in) #check that the make_df_to_graph('Czech Republic', 'inbound') is correct
+    # print (czech_rep_out)
+    # print (czech_rep)
+    # print ('\n')
+    # print ('OUTBOUND DATA STUFF')
+    # print (outbound_df.head())
+    # print (all_outbound_tourists_df.head())
+    # print (all_outbound_tourists_df[all_outbound_tourists_df['Country']=='Germany'])
+    # print (merged_inbound_and_outbound_tourists_df.columns)
+    pass
