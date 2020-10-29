@@ -157,6 +157,62 @@ def make_df_to_graph(country, indicator):
     return get_country_over_time(country, indicator).groupby(['Country', 'Year']).sum()
 
 
+#Find the Percent Changes of the Tourism graphs
+
+def find_percent_change(indicator, change_type):
+    
+    '''
+    Returns a series of dictionaries whose keys are countries
+    and values are the percent change over time of the population
+    
+    Parameters:
+        indicator (str): "inbound" or "outbound" 
+                depending on the data we want to observe
+        
+        change_type (str): "cumulative" or "regular" type 
+                of percent change wanted 
+    
+    Returns:
+        percent_dictionary (dict): keys are countries,
+            values are the cumulative or noncumulative percent change over time
+    '''
+    
+    percent_dictionary = dict()
+        
+    if indicator == "inbound":
+        for country in all_countries:
+
+            if country in countries_in_supply:
+                if change_type == "cumulative":
+                    percent_dictionary[country] = inbound_supply_to_graph.loc[country].reset_index()['Value'].pct_change().cumsum()
+                elif change_type == "regular":
+                    percent_dictionary[country] = inbound_supply_to_graph.loc[country].reset_index()['Value'].pct_change()
+
+            elif country in countries_in_demand_only:
+                if change_type == "cumulative":
+                    percent_dictionary[country] = inbound_demand_to_graph.loc[country].reset_index()['Value'].pct_change().cumsum()
+                elif change_type == "regular"
+                    percent_dictionary[country] = inbound_demand_to_graph.loc[country].reset_index()['Value'].pct_change()
+        
+    elif indicator == "outbound":
+        for country in list(all_outbound_tourists_df['Country'].unique()):
+            if change_type == "cumulative":
+                percent_dictionary[country] = outbound_to_graph.loc[country].reset_index()['Outgoing_Tourists'].pct_change().cumsum()
+            elif change_type == "regular"
+                percent_dictionary[country] = outbound_to_graph.loc[country].reset_index()['Outgoing_Tourists'].pct_change().
+    return percent_dictionary
+    
+# Print out the dictionary that shows the cumulative percent change of 
+# inbound and outbound tourists with country as the key, and percent change
+
+pct_dictionary_in = find_percent_change("inbound", "regular")
+# for k, v in dictionary_in.items():
+#     print (f'{k}, {v}')
+    
+pct_dictionary_out = find_percent_change("outbound", "regular")
+# for k, v in dictionary_out.items():
+#     print (f'{k}, {v}')
+
 
 if __name__ == '__main__':
     # print ('INBOUND DATA STUFF')
