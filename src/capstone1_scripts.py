@@ -113,7 +113,6 @@ merged_inbound_and_outbound_tourists_df = pd.merge(merged_inbound, all_outbound_
          suffixes = ['.inbound', '.outbound'], how = 'outer').sort_values(['Country', 'Year'])
 
 
-
 def get_country_over_time(country, indicator):
 
     '''
@@ -147,9 +146,8 @@ def get_country_over_time(country, indicator):
         df = all_outbound_tourists_df
         
     else:
-        print ("Please enter an appropriate Country and/or indicator(inbound or outbound)")
+        return ("Please enter an appropriate Country and/or indicator(inbound or outbound)")
         
-    
     return df[df['Country']==country]
 
 
@@ -158,9 +156,7 @@ def make_df_to_graph(country, indicator):
 
     return get_country_over_time(country, indicator).groupby(['Country', 'Year']).sum()
 
-czech_rep_in = make_df_to_graph('Czech Republic', 'inbound').reset_index()
-czech_rep_out = make_df_to_graph('Czech Republic', 'outbound').reset_index()
-czech_rep = get_country_over_time('Czech Republic', 'inbound')
+
 
 if __name__ == '__main__':
     # print ('INBOUND DATA STUFF')
@@ -168,6 +164,10 @@ if __name__ == '__main__':
     # print (all_inbound_tourists_df.columns)
     # print (inbound_supply_df.head())
     # print (inbound_demand_df.head())
+
+    czech_rep_in = make_df_to_graph('Czech Republic', 'inbound').reset_index()
+    czech_rep_out = make_df_to_graph('Czech Republic', 'outbound').reset_index()
+    czech_rep = get_country_over_time('Czech Republic', 'inbound')
     # print (czech_rep_in) #check that the make_df_to_graph('Czech Republic', 'inbound') is correct
     # print (czech_rep_out)
     # print (czech_rep)

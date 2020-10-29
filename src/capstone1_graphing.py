@@ -10,22 +10,23 @@ from capstone1_scripts import *
 most_outbound_tourists = merged_inbound_and_outbound_tourists_df.groupby('Country').max('Outgoing_Tourists').sort_values('Outgoing_Tourists', ascending = False).reset_index()
 most_out = most_outbound_tourists.head()
 
-most_inbound_tourists_supply = merged_inbound_and_outbound_tourists_df.groupby('Country').max('Value.Ssupply').sort_values('Value.supply', ascending = False).reset_index()
+most_inbound_tourists_supply = merged_inbound_and_outbound_tourists_df.groupby('Country').max('Value.Supply').sort_values('Value.supply', ascending = False).reset_index()
 most_inb_supply = most_inbound_tourists_supply.head()
 
+#I want to include Iceland,  which is the 6th most incoming country ever
 most_inbound_tourists_demand = merged_inbound_and_outbound_tourists_df.groupby('Country').max('Value.demand').sort_values('Value.demand', ascending = False).reset_index()
-most_inb_demand = most_inbound_tourists_demand.head()
+most_inb_demand = most_inbound_tourists_demand.head(6)
 
 
-## Bar graph 5 countries with most outbounds of all time
+## TO DO: make these next three code automated for all inbound or outbound, using the above variable dataframes
 
+## This makes a Bar graph 5 countries with most outbounds of all time
 sns.set_style('whitegrid')
 
 fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
-
 ax.bar(most_out['Country'], most_out['Outgoing_Tourists'], color = 'indianred')
 ax.tick_params(axis='both', which='major', labelsize=18)
-# ax.set_xlabel('Countries', fontsize = 20)
+# ax.set_xlabel('Countries', fontsize = 20) #probably don't ened this, is self explanatory in the tick labels
 ax.set_ylabel('Number of Outbound Tourists In 1 Year (in millions)',  fontsize = 20)
 ax.set_title('Countries with Most Outbound Tourists in 2018', size = 30)
 
@@ -34,6 +35,42 @@ for idx, data in enumerate(most_out['Outgoing_Tourists']):
 plt.tight_layout()
 # plt.show()
 
+# Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
+
+sns.set_style('whitegrid')
+fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
+ax.bar(most_inb_supply['Country'], most_inb_supply['Value.supply'], color = 'cornflowerblue')
+
+ax.tick_params(axis='both', which='major', labelsize=18)
+# ax.set_xlabel('Countries', fontsize = 20)
+ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
+ax.set_title('Countries with Most Inbound Tourists in 2018', size = 30)
+
+for idx, data in enumerate(most_inb_supply['Value.supply']):
+    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
+plt.tight_layout()
+# plt.show()
+
+''''''
+# Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
+
+sns.set_style('whitegrid')
+fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
+ax.bar(most_inb_demand['Country'], most_inb_demand['Value.demand'], color = 'royalblue')
+
+ax.tick_params(axis='both', which='major', labelsize=18)
+# ax.set_xlabel('Countries', fontsize = 20)
+ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
+ax.set_title('Countries with Most Inbound Tourists in 2018  \n from the Demand survey', size = 30)
+
+for idx, data in enumerate(most_inb_demand['Value.demand']):
+    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
+plt.tight_layout()
+
+
+
+''''''
+## TO DO; Make functions for these plots to graph any countries 
 
 #Graph these top 5 outbound countries
 germany_out = make_df_to_graph('Germany', 'outbound').reset_index()
@@ -59,27 +96,9 @@ plt.legend(fontsize = 16)
 # plt.savefig('most_outgoing.png')
 # plt.show()
 
-# Plot countries with top most inbound of all time 
-# the year this occured = 2018
+''''''
 
-sns.set_style('whitegrid')
-
-fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
-
-ax.bar(most_inb_supply['Country'], most_inb_supply['Value.supply'], color = 'cornflowerblue')
-
-ax.tick_params(axis='both', which='major', labelsize=18)
-# ax.set_xlabel('Countries', fontsize = 20)
-ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
-ax.set_title('Countries with Most Inbound Tourists in 2018', size = 30)
-
-for idx, data in enumerate(most_inb_supply['Value.supply']):
-    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
-plt.tight_layout()
-# plt.show()
-
-
-# Incoming Tourists Over Time for Countries with the Most Outgoing Tourists in one Year
+# Incoming Tourists Over Time for Countries in the Supply survey
 fig, ax = plt.subplots(1, 1, figsize=(20, 8), dpi = 256)
 
 spain_in = make_df_to_graph('Spain', 'inbound').reset_index()
@@ -92,15 +111,49 @@ ax.plot(spain_in['Year'],spain_in['Value'] , color = 'navy', ls = 'dashed', labe
 ax.plot(italy_in['Year'], italy_in['Value'], color = 'deepskyblue', ls = 'solid',  label = 'Italy', marker = 'o')
 ax.plot(germany_in['Year'], germany_in['Value'], color = 'steelblue', ls = ":", lw = 2, label = 'Germany', marker = 'o')
 ax.plot(austria_in['Year'], austria_in['Value'], color = "cadetblue", ls = 'dashdot', label = 'Austria', marker = 'o')
-ax.set_title('Incoming Tourists Over Time, \n for Countries with the Most Outgoing Tourists in one Year', fontsize = 20)
-plt.legend(fontsize = 14, numpoints = 1);
+ax.set_title('Incoming Tourists Over Time, \n for Countries with top tourism numbers \n reported in the Supply Survey*', fontsize = 20)
+plt.legend(fontsize = 16, numpoints = 1);
+# plt.show();
 
-# Plot 
+
+# Incoming tourists over time for countries in the Demand survey 
+
+fig, ax = plt.subplots(1, 1, figsize=(20, 8), dpi = 256)
+
+fig, ax = plt.subplots(1, 1, figsize=(20, 8), dpi = 256)
+
+spain_in = make_df_to_graph('France', 'inbound').reset_index()
+denmark_in = make_df_to_graph('Denmark', 'inbound').reset_index()
+sweden_in = make_df_to_graph('Sweden', 'inbound').reset_index()
+ireland_in = make_df_to_graph('Ireland', 'inbound').reset_index()
+malta_in = make_df_to_graph('Malta', 'inbound').reset_index()
+iceland_in = make_df_to_graph('Iceland', 'inbound').reset_index()
+
+ax.tick_params(axis='both', which='major', labelsize=16)
+ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
+
+#Choose to eliminate Spain since it is a big outlier
+# ax.plot(spain_in['Year'],spain_in['Value'] , color = 'darkturquoise', ls = 'dashed', label = 'Spain', marker ='o')
+ax.plot(denmark_in['Year'], denmark_in['Value'], color = 'mediumturquoise', ls = 'solid',  label = 'Denmark', marker = 'o')
+ax.plot(sweden_in['Year'], sweden_in['Value'], color = 'teal', ls = ":", lw = 2, label = 'Sweden', marker = 'o')
+ax.plot(ireland_in['Year'], ireland_in['Value'], color = "lightseagreen", ls = 'dashdot', label = 'Ireland', marker = 'o')
+ax.plot(malta_in['Year'], malta_in['Value'], color = "darkcyan", ls = 'solid', label = 'Malta', marker = 'o')
+ax.plot(iceland_in['Year'], iceland_in['Value'], color = "mediumaquamarine", ls = 'dotted', label = 'Iceland', marker = 'o')
+ax.set_title('Incoming Tourists Over Time, \n for Countries with most total reported tourists \n from the Demand Survey', fontsize = 20)
+plt.legend(fontsize = 16, numpoints = 1)
+plt.show()
+
+
+
+
+''''''
+
+
+
 
 if __name__ == '__main__':
-    # print (countries_with_most_outbound_tourists)
     # print (most_out)
     # print (most_inb_supply)
-    # print (most_ind_demand)
+    # print (most_inb_demand)
+    #print (most_inb_line)
     pass
-
