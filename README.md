@@ -15,18 +15,6 @@
 
 With the rise of Instragram and the "wanderlust" hashtag, as well as the availability of cheap flights in the 2010s, it seems like *everyone* was traveling frequently, particularly going abroad to Europe. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. 
 
-```
-['Austria', 'Belgium', 'Czech Republic', 
-'Denmark', 'Finland', 'France', 'Germany', 
-'Greece', 'Hungary', 'Iceland', 'Ireland', 
-'Italy', 'Luxembourg', 'Netherlands', 'Norway', 
-'Poland', 'Portugal', 'Slovak Republic', 'Spain', 
-'Sweden', 'Switzerland', 'Bulgaria', 'Croatia', 
-'Estonia', 'Latvia', 'Lithuania', 'Malta', 
-'Romania', 'Slovenia']
-These countries are, from the Inbound Dataset:  not every country is affected by tourism the same way, and truly not everyone is able to travel as much as it may seem.  
-```
-
 ## Motivation
 
 I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. (I am so curious, that I had planned to take a group of students on an international educational program to Iceland to learn about the effects of over-tourism, but sadly wasn’t able to go due to the Coronavirus.) So, for selfish purposes, I want to knnow which countries in Europe saw the greatest percent change (both positive and negative) since 2008. (Maybe that’s where I want to travel next!)
@@ -43,7 +31,6 @@ But I am also curious about why there may be a change, because as a tourist, I�
 For this project, I focused on tourism to and from European countries between 2008 and 2009. 
 * **European Countries** in this project are defined as the union of countries from the Schengen region and the EU, which are the following 29 countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.```
 
-#### Key Terms
 The following terms and definitions are taken from the Organisation for Economic Co-Operation and Development (OEC)<sup>1</sup>
 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
@@ -55,6 +42,7 @@ The following terms and definitions are taken from the Organisation for Economic
 
 
 ## The Data
+- I pulled data from three sources looking at outgoing and incoming tourists from/to countries, and the GDP of those countries.
 - The data for incoming and outgoing tourists numbers I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
 
 **A brief look at the raw data from the Inbound Tourism Dataset**
@@ -88,7 +76,6 @@ Value represents total incoming tourists
 | 442 | Czech Republic | Overnight visitors (tourists) | SUPPLY | 2010 | 6333996 |
 
 
-
 **A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
 
 |    | Country        | Variable                      | Year | Outgoing_Tourists |
@@ -116,10 +103,12 @@ Value represents total incoming tourists
 | 19 | Bulgaria    | 54438966420.00  | 51999181062.00  | 50363282117.00  | 57363610380.00  | 54013812089.00  | 55591336862.00  | 56883172568.00  | 50630703922.00  | 53785050339.00  | 58950125036.00  | 66200847918.00  |
 
 ## EDA 
-
+#### A look at the outgoing tourism from the Czech Republic over time
 ![Outgoing from Czech-Rep](https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/outgoing_czech.png)
 
+#### A look at the five countries who reported the top 5 most incoming tourists over time. 
 
+#### A look at the 5 countries who reported the top 5 more outgoing tourists over time. It happens that each of these was reported in 2018
 
 ## Analysis 
 
