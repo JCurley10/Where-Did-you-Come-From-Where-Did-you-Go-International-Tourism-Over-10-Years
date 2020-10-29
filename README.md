@@ -52,11 +52,11 @@ The following terms and definitions are taken from the Organisation for Economic
 
 **A brief look at the raw data from the Inbound Tourism Dataset**
 
-| COUNTRY | Country | VARIABLE | Variable | SOURCE | Source | YEAR | Year | Value |
-|---------|---------|----------|----------|--------|--------|------|------|-------|
-| CZE | Czech Republic | INB_ARRIVALS_OVERNIGHT | Overnight visitors (tourists) | SUPPLY | Tourism supply surveys | 2008 | 2008 | 6649410 |  |  |
-| CZE | Czech Republic | INB_ARRIVALS_OVERNIGHT | Overnight visitors (tourists) | SUPPLY | Tourism supply surveys | 2009 | 2009 | 6032370 |  |  |
-| CZE | Czech Republic | INB_ARRIVALS_OVERNIGHT | Overnight visitors (tourists) | SUPPLY | Tourism supply surveys | 2010 | 2010 | 6333996 |  |  |
+|      | COUNTRY | Country |                     VARIABLE |                        Variable | SOURCE |                 Source | YEAR | Year |   Value | Flag Codes | Flags |
+|------|--------:|--------:|-----------------------------:|--------------------------------:|-------:|-----------------------:|-----:|-----:|--------:|-----------:|------:|
+| 1541 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2013 | 2013 | 812325  | NaN        | NaN   |
+| 1542 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2014 | 2014 | 1106718 | NaN        | NaN   |
+| 1543 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2015 | 2015 | 1259951 | NaN        | NaN   |
 
 - original "inbound" dataset, showing the first three rows for the Czech Republic, one of the 28 countries I investigated.
 
@@ -72,53 +72,111 @@ The following terms and definitions are taken from the Organisation for Economic
     - Countries whose data come from the Tourism supply surveys, grouped under ```SUPPLY ```: Austria, Belgium, Czech Republic, Finland, Germany, Greece, Hungary, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Romania, and Slovenia```
     - Countries whose data come from the Tourism demand surveys, grouped under  ```DEMAND```: ```Denmark, France, Iceland, Ireland, Malta, Sweden```
     
-**A look at a cleaned Inbound dataset for inbound tourists to a country, by inbound country and source**
-Value represents total incoming tourists
-|     | Country        | Variable                      | SOURCE | Year | Value   |
-|-----|----------------|-------------------------------|--------|------|---------|
-| 440 | Czech Republic | Overnight visitors (tourists) | SUPPLY | 2008 | 6649410 |
-| 441 | Czech Republic | Overnight visitors (tourists) | SUPPLY | 2009 | 6032370 |
-| 442 | Czech Republic | Overnight visitors (tourists) | SUPPLY | 2010 | 6333996 |
+#### A look at a cleaned Inbound dataset for inbound tourists to a country, by inbound country and source
+**Value** represents total incoming tourists
+|      | Country | Variable                      | SOURCE | Year | Value   |
+|------|---------|-------------------------------|--------|------|---------|
+| 1571 | Iceland | Overnight visitors (tourists) | DEMAND | 2013 |  807349 |
+| 1572 | Iceland | Overnight visitors (tourists) | DEMAND | 2014 |  997556 |
+| 1573 | Iceland | Overnight visitors (tourists) | DEMAND | 2015 | 1289139 |
 
 
-**A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
+A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
 
-|    | Country        | Variable                      | Year | Outgoing_Tourists |
-|----|----------------|-------------------------------|------|-------------------|
-| 74 | Czech Republic | Overnight visitors (tourists) | 2008 | 9665239           |
-| 75 | Czech Republic | Overnight visitors (tourists) | 2009 | 8904347           |
-| 76 | Czech Republic | Overnight visitors (tourists) | 2010 | 8672554           |
+|     | Country | Variable                      | Year | Outgoing_Tourists |
+|-----|---------|-------------------------------|------|-------------------|
+| 140 | Iceland | Overnight visitors (tourists) | 2013 |         381675.00 |
+| 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
+| 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
 
 **A brief look at the raw data from the GDP dataset**
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
 - The GDP is in current USD, for the sake of continuity. 
 
-| Country Name | Country Code | Indicator Name    | Indicator Code | 1960        | 1961        | 1962        | 1963        | 1964        | 1965       | 1966       | 1967       | 1968       | 1969       | 1970       | 1971       | 1972       | 1973       | 1974       | 1975       | 1976       | 1977       | 1978       | 1979       | 1980       | 1981       | 1982       | 1983       | 1984       | 1985       | 1986        | 1987        | 1988        | 1989        | 1990        | 1991        | 1992        | 1993       | 1994       | 1995       | 1996       | 1997       | 1998       | 1999       | 2000       | 2001       | 2002        | 2003        | 2004        | 2005        | 2006        | 2007        | 2008        | 2009        | 2010        | 2011        | 2012        | 2013        | 2014        | 2015        | 2016        | 2017        | 2018        | 2019        |
-|--------------|--------------|-------------------|----------------|-------------|-------------|-------------|-------------|-------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
+| Country Name | Country Code |   Indicator Name  | Indicator Code |     1960    |     1961    |     1962    |     1963    |     1964    |    1965    |    1966    |    1967    |    1968    |    1969    |    1970    |    1971    |    1972    |    1973    |    1974    |    1975    |    1976    |    1977    |    1978    |    1979    |    1980    |    1981    |    1982    |    1983    |    1984    |    1985    |     1986    |     1987    |     1988    |     1989    |     1990    |     1991    |     1992    |    1993    |    1994    |    1995    |    1996    |    1997    |    1998    |    1999    |    2000    |    2001    |     2002    |     2003    |     2004    |     2005    |     2006    |     2007    |     2008    |     2009    |     2010    |     2011    |     2012    |     2013    |     2014    |     2015    |     2016    |     2017    |     2018    |     2019    |
+|:------------:|:------------:|:-----------------:|:--------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
 | Aruba        | ABW          | GDP (current US$) | NY.GDP.MKTP.CD |             |             |             |             |             |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            | 405463417.1 | 487602457.7 | 596423607.1 | 695304363   | 764887117.2 | 872138715.1 | 958463184.4 | 1082979721 | 1245688268 | 1320474860 | 1379960894 | 1531944134 | 1665100559 | 1722798883 | 1873452514 | 1920111732 | 1941340782  | 2021229050  | 2228491620  | 2330726257  | 2424581006  | 2615083799  | 2745251397  | 2498882682  | 2390502793  | 2549720670  | 2534636872  | 2701675978  | 2765363128  | 2919553073  | 2965921788  | 3056424581  |             |             |
 | Afghanistan  | AFG          | GDP (current US$) | NY.GDP.MKTP.CD | 537777811.1 | 548888895.6 | 546666677.8 | 751111191.1 | 800000044.4 | 1006666638 | 1399999967 | 1673333418 | 1373333367 | 1408888922 | 1748886596 | 1831108971 | 1595555476 | 1733333264 | 2155555498 | 2366666616 | 2555555567 | 2953333418 | 3300000109 | 3697940410 | 3641723322 | 3478787909 |            |            |            |            |             |             |             |             |             |             |             |            |            |            |            |            |            |            |            |            | 4055179566  | 4515558808  | 5226778809  | 6209137625  | 6971285595  | 9747879532  | 10109225814 | 12439087077 | 15856574731 | 17804292964 | 20001598506 | 20561069558 | 20484885120 | 19907111419 | 19362642267 | 20191760000 | 19484384937 | 19101353833 |
 | Angola       | AGO          | GDP (current US$) | NY.GDP.MKTP.CD |             |             |             |             |             |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            | 5930503401 | 5550483036 | 5550483036 | 5784341596 | 6131475065 | 7553560459 | 7072063345  | 8083872012  | 8769250550  | 10201099040 | 11228764963 | 10603784541 | 8307810974  | 5768720422 | 4438321017 | 5538749260 | 7526446606 | 7648377413 | 6506229607 | 6152922943 | 9129594819 | 8936063723 | 15285594828 | 17812705294 | 23552052408 | 36970918699 | 52381006892 | 65266452081 | 88538611205 | 70307163678 | 83799496611 | 1.12E+11    | 1.28E+11    | 1.37E+11    | 1.46E+11    | 1.16E+11    | 1.01E+11    | 1.22E+11    | 1.01E+11    | 94635415870 |
 
-**A look at a cleaned GDP dataset, only looking at the Schengen Zone and EU countries**
-
-|    | Country Name | 2008            | 2009            | 2010            | 2011            | 2012            | 2013            | 2014            | 2015            | 2016            | 2017            | 2018            |
-|----|-------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| 12 | Austria     | 430000000000.00 | 400000000000.00 | 392000000000.00 | 431000000000.00 | 409000000000.00 | 430000000000.00 | 442000000000.00 | 382000000000.00 | 395000000000.00 | 418000000000.00 | 456000000000.00 |
-| 15 | Belgium     | 515000000000.00 | 481000000000.00 | 481000000000.00 | 523000000000.00 | 496000000000.00 | 522000000000.00 | 535000000000.00 | 462000000000.00 | 476000000000.00 | 504000000000.00 | 543000000000.00 |
-| 19 | Bulgaria    | 54438966420.00  | 51999181062.00  | 50363282117.00  | 57363610380.00  | 54013812089.00  | 55591336862.00  | 56883172568.00  | 50630703922.00  | 53785050339.00  | 58950125036.00  | 66200847918.00  |
 
 ## EDA 
-#### A look at the outgoing tourism from the Czech Republic over time
-![Outgoing from Czech-Rep](https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/outgoing_czech.png)
 
-#### A look at the five countries who reported the top 5 most incoming tourists over time. 
+#### A look at the tourism change overtime, to and from Iceland 
 
-#### A look at the 5 countries who reported the top 5 more outgoing tourists over time. It happens that each of these was reported in 2018
+
 
 ## Analysis 
+<table>
+  
+<tr><th>Percent Change of Outbound Tourists</th><th>Percent Change of Inbound Tourists</th></tr>
 
+<tr><td>
+  
+| Country         | Cum. Pct. Change |
+|-----------------|------------------|
+| Iceland         | 1.00             |
+| Malta           | 0.99             |
+| Finland         | 0.91             |
+| Luxembourg      | 0.68             |
+| Poland          | 0.64             |
+| Belgium         | 0.45             |
+| Switzerland     | 0.45             |
+| Spain           | 0.41             |
+| Sweden          | 0.41             |
+| Hungary         | 0.39             |
+| Portugal        | 0.34             |
+| Lithuania       | 0.31             |
+| Germany         | 0.29             |
+| Slovenia        | 0.28             |
+| Italy           | 0.24             |
+| Ireland         | 0.22             |
+| Austria         | 0.22             |
+| Netherlands     | 0.21             |
+| Estonia         | 0.20             |
+| Denmark         | 0.19             |
+| Croatia         | 0.13             |
+| Norway          | 0.10             |
+| France          | 0.07             |
+| Czech Republic  | 0.02             |
+| Bulgaria        | 0.01             |
+| Slovak Republic | -0.08            |
+| Romania         | -0.13            |
+| Latvia          | -0.23            |
 
+</td><td>
 
+| Country         | Cum. Pct. Change |
+|-----------------|------------------|
+| Iceland         | 1.75             |
+| Slovenia        | 0.87             |
+| Latvia          | 0.80             |
+| Malta           | 0.75             |
+| Romania         | 0.69             |
+| Croatia         | 0.68             |
+| Greece          | 0.66             |
+| Netherlands     | 0.65             |
+| Portugal        | 0.61             |
+| Poland          | 0.59             |
+| Czech Republic  | 0.49             |
+| Germany         | 0.46             |
+| Denmark         | 0.44             |
+| Lithuania       | 0.44             |
+| Italy           | 0.43             |
+| Hungary         | 0.37             |
+| Austria         | 0.35             |
+| Slovak Republic | 0.33             |
+| Spain           | 0.32             |
+| Switzerland     | 0.32             |
+| Finland         | 0.29             |
+| Ireland         | 0.28             |
+| Belgium         | 0.17             |
+| Luxembourg      | 0.17             |
+| Norway          | 0.15             |
+| Estonia         | 0.14             |
+| France          | 0.12             |
+| Sweden          | -0.06            |
+</td></tr> </table>
 
 ## Conclusion and Further Analysis
 
