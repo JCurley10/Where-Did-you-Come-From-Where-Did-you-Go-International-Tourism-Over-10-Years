@@ -28,8 +28,8 @@ But I am also curious about why there may be a change, because as a tourist, I�
 
 ## The Questions
 
-• Which countries saw the greatest rate of change (positive and negative, if any), and least change, for both incoming and outgoing international travelers between 2008 and 2018?
-• How does the rate of change of GDP of a country correlate to both the incoming-tourists to that country, and outgoing-tourist rates from that country?
+- Which countries saw the greatest rate of change (positive and negative, if any), and least change, for both incoming and outgoing international travelers between 2008 and 2018?
+- How does the rate of change of GDP of a country correlate to both the incoming-tourists to that country, and outgoing-tourist rates from that country?
 
 ## Key Terms and Definitions
 
