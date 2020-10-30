@@ -276,10 +276,10 @@ Another look at Iceland, both inbound and outbound
   - The countries that had a positive percent change in GDP had a regularly positive, and increasing percent change in GDP and a similarly stady positive percent change increase of inbound tourists. 
   - For countries with a relatively flat percent change in GDP, they saw a relatively flat percent change (percent change that hover around 0) in inbound or outbound tourists. 
 - Iceland, whose tourism increased the most (both inbound and outbound), did not have a very high cumulative GDP percent change. Iceland is a unique country for other reasons including having a very small population, and a boom in popularity after the 2011 volcano erpution. 
-<p>
-- The source data also was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
-- It would be valuable to compare the change in per-capita GDP to tourist rates by population in the future
-- It would be interesting to look at more than just GDP as a comparitive measure against tourism numbers
+
+* The source data also was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
+* It would be valuable to compare the change in per-capita GDP to tourist rates by population in the future
+* It would be interesting to look at more than just GDP as a comparitive measure against tourism numbers
 
 ----
 
