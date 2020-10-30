@@ -40,7 +40,6 @@ While I will not be able to make any conclusions about the relationship between 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - **A tourist** is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
-  - In the purpose of this analysis, 
 - **Inbound tourism** comprises the activities of a non-resident visitor within the country of reference. <sup>2</sup>
 - For the purpose of this analysis, I used the information described under the **"Overnight visitors (tourists)"** feature in tourism numbers from the Inbound Tourism and Outbound Tourism datasets under the descriptor  to describe . These terms may be used interchangeably throughout this file
  
