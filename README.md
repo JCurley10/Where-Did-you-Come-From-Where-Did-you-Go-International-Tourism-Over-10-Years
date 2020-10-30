@@ -125,9 +125,9 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 ## Analysis 
 
 ### Percent Change
-- Because of population difference, I chose to use relative changes (percent change) over time to compare a country's tourism rates and GDP
-- Most economic measures deal in percent change, so this analysis aligns with how other economic measures dealing with tourism and GDP are often reported. 
-- The information gathered from the **Cumululative Percent Change tables** below showed the countries with the most and least changes.
+- Because of population difference, I chose to look at relative changes (percent change) over time to compare a country's tourism rates and GDP. Particularly at yearly percent change. 
+- Most economic measures are reported in percent change, so this analysis aligns with how tourism and GDP are often reported. 
+- The information in the tables below show **Cumululative Percent Change**, of outbound and inbound tourism and GDP, ordered from positive to negative
 - Two countries form the top and bottom of the tables reflecting tourism change were selected for furhter analysis. 
 
 <table>
