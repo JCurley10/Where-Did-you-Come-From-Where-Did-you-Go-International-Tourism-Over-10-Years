@@ -66,7 +66,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 | 1543 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2015 | 2015 | 1259951 | NaN        | NaN   |
 
 
-#### A look at a cleaned Inbound dataset for inbound tourists to a country, by inbound country and source
+#### A look at a cleaned Inbound dataset for inbound tourists to Iceland, by inbound country and source
 
 |      | Country | Variable                      | SOURCE | Year | Value   |
 |------|---------|-------------------------------|--------|------|---------|
@@ -76,13 +76,14 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 * **Value** represents total incoming tourists
 
-#### A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country
+#### A look at a cleaned Outbound dataset for outbound tourists from Iceland<sup>*</sup>, by origin country
 
 |     | Country | Variable                      | Year | Outgoing_Tourists |
 |-----|---------|-------------------------------|------|-------------------|
 | 140 | Iceland | Overnight visitors (tourists) | 2013 |         381675.00 |
 | 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
 | 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
+- <sup>*</sup> *Interesting, these numbers are greater than the total population of Iceland. Hmm...
 
 ### GDP
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
@@ -278,7 +279,7 @@ Another look at Iceland, both inbound and outbound
   - The countries that had the most positive cumulative percent change in outbound or inbound tourists saw similar trends between percent change in tourism and precent change in GDP.
   - Countries with a smaller cumulative percent change in tourism over time also saw a consistently flat year-on-year percent change in GDP (percent change that hover around 0)
 - Iceland, whose tourism increased the most (both inbound and outbound), did not have a very high cumulative GDP percent change. Iceland is a unique country for other reasons including having a very small population, and a boom in popularity after the 2011 volcano erpution. 
-- The source data  was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
+- The source data  was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country. I  would like to get more information on exactly how the inbound and outbound data were collected beyond the brief descriptions on the OECD website.
 
 ### Further Analysis:
 * It would be interesting to compare the actual tourism and GDP percent growth correlations of all countries investigated in the percent change. 
