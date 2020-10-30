@@ -216,7 +216,6 @@ A look at a cleaned Outbound dataset for outbound tourists from a country, by or
 There is clearly something different or misleading about where the inbound and outbound tourism data come from. 
 
 
-**Notes to self**: 
 
 ----
 <sup>1</sup> [stats.oecd.org](https://stats.oecd.org) <p>
