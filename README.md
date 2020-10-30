@@ -1,5 +1,5 @@
-# Where did you Come From, Where did you go? International Tourism Over 10 Years, with a focus on European Countries
-## Investigating International Tourism to and from European countries over 2008 - 2018, and the relationship to GDP and world events
+# Where did you Come From, Where did you go? 
+## Investigating International Tourism and GDP to and from European countries over 2008 - 2018
 
 
 ## Table of Contents
@@ -14,8 +14,8 @@
 
 ## Background
 
-It seems like *everyone* has been traveling a lot over the past decade, particularly going abroad to Europe. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
-It also seems like the econonmic health of Europe has never been better. But is that true? And are these two phenonemna related?
+It seems like *everyone* has been traveling to Europe a lot in the past decade. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
+It also seems like the econonmic health of Europe has never been better. But is *that* true? And are these two phenonemna related?
 
 ## Motivation
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
@@ -24,17 +24,18 @@ It also seems like the econonmic health of Europe has never been better. But is 
 <p>(Personal Photos. Location from left to right: The Louvre, Paris; Charles Bridge, Prauge; Ljubliana, Slovenia)
 <p>
   
-I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. For travel planning purposes, I want to knnow which countries in Europe saw the greatest percent change (both positive and negative) since 2008.
+I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. For travel planning purposes, I want to know which countries in Europe saw the greatest percent change (both positive and negative) since 2008.
 <p>
 But I am also curious about why there may be a change. As a tourist, I want to consider the shape of the country I travel to. I assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
 <p>
-While I will not be able to make any conclusions about the relationship between GDP and tourist rates-of-change, I am interested in their correlation as a start to a deeper investigation of tourism indicators. 
 
 ## The Questions
 
 - Which countries saw the greatest rate of change (positive and negative, if any), and least change, for both incoming and outgoing international travelers between 2008 and 2018?
 
-- How does the rate of change of GDP of a country correlate to both the incoming-tourists to that country, and outgoing-tourist rates from that country?
+- How does the rate of change of GDP of a country correlate to both the incoming-tourists rates to that country, and outgoing-tourist rates from that country?
+
+While I will not be able to make any conclusions about the relationship between GDP and tourist rates-of-change, I am interested in their correlation as a start to a deeper investigation of tourism indicators. 
 
 ## Key Terms and Definitions
 
@@ -49,12 +50,12 @@ While I will not be able to make any conclusions about the relationship between 
 
 ## The Data
 
-### The data I used come from three separate datasets: Incoming Tourists, Outgoing Tourists, and GDP (Current USD)
+### The data I used come from three separate datasets: Inbound Tourists, Outbound Tourists, and GDP (Current USD)
 
-#### Incoming and Outgoing Tourists: 
+### Inbound and Outbound Tourists: 
 The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
 
-### Important Features of the Data Sets 
+#### Important Features of the Data Sets 
 - The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
 - the ```Value``` represents the total population of the "Variable" indicator. For the purposes of this study, they are the total incoming tourists to the country in the ```Country``` column.
 - The ```source```<sup>3</sup> column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
@@ -87,11 +88,11 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 | 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
 | 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
 
-
-    
-**A brief look at the raw data from the GDP dataset**
+### GDP
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
-- The GDP is in current USD, for the sake of continuity. 
+- The GDP is in current USD, for the purpose of consistency
+    
+#### A brief look at the raw data from the GDP dataset
 
 | Country Name | Country Code |   Indicator Name  | Indicator Code |     1960    |     1961    |     1962    |     1963    |     1964    |    1965    |    1966    |    1967    |    1968    |    1969    |    1970    |    1971    |    1972    |    1973    |    1974    |    1975    |    1976    |    1977    |    1978    |    1979    |    1980    |    1981    |    1982    |    1983    |    1984    |    1985    |     1986    |     1987    |     1988    |     1989    |     1990    |     1991    |     1992    |    1993    |    1994    |    1995    |    1996    |    1997    |    1998    |    1999    |    2000    |    2001    |     2002    |     2003    |     2004    |     2005    |     2006    |     2007    |     2008    |     2009    |     2010    |     2011    |     2012    |     2013    |     2014    |     2015    |     2016    |     2017    |     2018    |     2019    |
 |:------------:|:------------:|:-----------------:|:--------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -102,7 +103,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 ## EDA 
 
-#### General Trends
+### General Trends of Inbound and Outbound data
 
 Looking at the the trend of the countries that had the most reported inbound or outbound tourist numbers reported, ever. (It turned out, all the most inbound tourism numbers came from 2018!)
 
@@ -120,7 +121,16 @@ Germany is a major outlier. Let's see these values without Germany
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing_no_germany.png" alt = "outgoing_no_germany">
 
+### GDP over time
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/gdp.png" alt = "GDP">
+
 ## Analysis 
+
+### Percent Change
+- Because of population difference, I chose to use relative changes (percent change) over time to compare a country's tourism rates and GDP
+- The information gathered from the Cumululative Percent Change tables below showed the countries with the most and least changes.
+- The top 2 and bottom 2 countries of the tables reflecting tourism change were selected for furhter analysis. 
+
 <table>
   
 <tr><th>Percent Change of Outbound Tourists</th><th>Percent Change of Inbound Tourists</th><th>Percent Change of GDP</th></tr>
@@ -224,6 +234,12 @@ Germany is a major outlier. Let's see these values without Germany
 | Switzerland     | 0.04             |
 | Sweden          | 0.03             |  
 </td></tr> </table>
+
+### Tourism Vs. GDP
+
+
+
+
 
 ## Conclusion and Further Analysis
 
