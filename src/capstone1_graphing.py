@@ -181,7 +181,8 @@ def tourists_in_from_supply_graph(show = False, save = False):
     ax.plot(italy_in['Year'], italy_in['Value'], color = 'deepskyblue', ls = 'solid',  label = 'Italy', marker = 'o')
     ax.plot(germany_in['Year'], germany_in['Value'], color = 'steelblue', ls = ":", lw = 2, label = 'Germany', marker = 'o')
     ax.plot(austria_in['Year'], austria_in['Value'], color = "cadetblue", ls = 'dashdot', label = 'Austria', marker = 'o')
-    ax.set_title('Incoming Tourists Over Time, \n for Countries with top tourism numbers \n reported in the Supply Survey*', fontsize = 24)
+    ax.plot(greece_in['Year'], greece_in['Value'], color = "blue", ls = 'dashdot', label = 'Greece', marker = 'o')
+    ax.set_title('Incoming Tourists Over Time, \n for Countries with top tourism numbers \n reported in the Supply Survey', fontsize = 24)
     plt.legend(fontsize = 16, numpoints = 1)
     plt.tight_layout()
 
@@ -189,9 +190,7 @@ def tourists_in_from_supply_graph(show = False, save = False):
         plt.show()
         
     elif save:
-        plt.savefig('images/most_incoming_supply.png')
-
-
+        plt.savefig('../images/most_incoming_supply.png')
 
 
 
@@ -200,6 +199,7 @@ def tourists_in_from_supply_graph(show = False, save = False):
 
 #Countries with the most ever reported incoming tourists, according to the Supply source
 ## Make DataFrames to graph, ad reset the index to be able to input them in the functions as is below
+france_in = make_df_to_graph('France', 'inbound').reset_index()
 denmark_in = make_df_to_graph('Denmark', 'inbound').reset_index()
 sweden_in = make_df_to_graph('Sweden', 'inbound').reset_index()
 ireland_in = make_df_to_graph('Ireland', 'inbound').reset_index()
@@ -227,7 +227,7 @@ def tourists_in_from_demand_graph(show = False, save = False):
     ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
 
     #Choose to eliminate Spain since it is a big outlier
-    # ax.plot(spain_in['Year'],spain_in['Value'] , color = 'darkturquoise', ls = 'dashed', label = 'Spain', marker ='o')
+    ax.plot(france_in['Year'], france_in['Value'] , color = 'darkturquoise', ls = 'dashed', label = 'France', marker ='o')
     ax.plot(denmark_in['Year'], denmark_in['Value'], color = 'mediumturquoise', ls = 'solid',  label = 'Denmark', marker = 'o')
     ax.plot(sweden_in['Year'], sweden_in['Value'], color = 'teal', ls = ":", lw = 2, label = 'Sweden', marker = 'o')
     ax.plot(ireland_in['Year'], ireland_in['Value'], color = "lightseagreen", ls = 'dashdot', label = 'Ireland', marker = 'o')
@@ -353,7 +353,7 @@ def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = 
     if save:
         plt.savefig(f"../images/{country}_gdp_{indicator}_line")
 
-    return "done"
+
 
 
 
@@ -366,18 +366,19 @@ if __name__ == '__main__':
     # print (most_out)
     # print (most_inb_supply)
     # print (most_inb_demand)
-    # print (tourists_in_from_demand_graph(show=True, save = False))
-    # print (tourists_in_from_supply_graph(show = True, save = False))
+    # print (tourists_in_from_demand_graph(show=False, save = True))
+    # print (tourists_in_from_supply_graph(show = False, save = True))
 
     # regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True)
-    print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
-    print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
-
-    print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
-    print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
-    print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
-    print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+    # print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
+    # print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Switzerland', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True))
     
+    # print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+
     # print (line_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
     # print (line_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
     # print (line_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True))
