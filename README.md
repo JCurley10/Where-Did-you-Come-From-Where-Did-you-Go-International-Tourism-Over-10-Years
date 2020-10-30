@@ -104,7 +104,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 #### Looking at the the trend of the countries that reported the most inbound or outbound tourist numbers ever reported. (It turned out, all the highest inbound tourism numbers came from 2018!)
 
-<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply">
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply" >
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand.png" alt = "incoming_no_france">
 
@@ -270,8 +270,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 Another look at Iceland, both inbound and outbound 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/iceland_gdp_inbound_line.png" alt = "iceland_in_line" >
 
-<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_line.png" alt = "iceland_out_line" >
-
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_line.png" alt = "iceland_out_line"  >
 
 ## Conclusion and Further Analysis
 
