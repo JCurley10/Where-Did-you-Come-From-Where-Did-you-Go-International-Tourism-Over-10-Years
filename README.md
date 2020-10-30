@@ -108,13 +108,14 @@ Looking at the the trend of the countries that had the most reported inbound or 
 
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply">
 
-<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand_no_france.png" alt = "most_incoming_demand">
-France is a major outlier. Let's see these values without France.
-
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand.png" alt = "incoming_no_france">
 
+France is a major outlier. Let's see these values without France.
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand_no_france.png" alt = "most_incoming_demand">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing.png" alt = "most_outgoing">
+
 Germany is a major outlier. Let's see these values without Germany
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing_no_germany.png" alt = "outgoing_no_germany">
