@@ -372,8 +372,9 @@ if __name__ == '__main__':
     # print (regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True))
     # print (regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
     # print (regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
-    regplot_comparison_graph('Estonia', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True)
-    
+    # regplot_comparison_graph('Estonia', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True)
+    # regplot_comparison_graph('Sweden', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True)
+    regplot_comparison_graph('Luxembourg', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True)
     # print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
     # print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
     # print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
