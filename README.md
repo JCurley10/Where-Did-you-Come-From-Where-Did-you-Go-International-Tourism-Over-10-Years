@@ -14,9 +14,9 @@
 
 ## Background and Motivation
 
-<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
-<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Prague.JPG" alt="prague" width="250" height="250"> |
-<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/slovenia.png" alt="Slovenia" width="250" height="250">  |
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="300" height="300"> |
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Prague.JPG" alt="prague" width="300" height="300"> |
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/slovenia.png" alt="Slovenia" width="300" height="300">  |
 <p>(Personal Photos. Location from left to right: The Louvre, Paris; Charles Bridge, Prauge; Ljubliana, Slovenia)
 <p>
   
@@ -40,9 +40,8 @@ While I will not be able to make any conclusions about the relationship between 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - **A tourist** is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
-  - In the purpose of this analysis, 
 - **Inbound tourism** comprises the activities of a non-resident visitor within the country of reference. <sup>2</sup>
-- For the purpose of this analysis, I used the information described under the **"Overnight visitors (tourists)"** feature in tourism numbers from the Inbound Tourism and Outbound Tourism datasets under the descriptor  to describe . These terms may be used interchangeably throughout this file
+- For the purpose of this analysis, I looked at the number of tourists ("Value") described by the variable **"Overnight visitors (tourists)"**  in the Inbound Tourism and Outbound Tourism datasets.
  
 
 ## The Data
@@ -55,7 +54,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 #### Important Features of the Data Sets 
 - The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
 - the ```Value``` represents the total population of the "Variable" indicator. For the purposes of this study, they are the total incoming tourists to the country in the ```Country``` column.
-- The ```source```<sup>3</sup> column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
+- The ```source```column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
     
     
 **A brief look at the raw data from the Inbound Tourism Dataset**
@@ -67,7 +66,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 | 1543 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2015 | 2015 | 1259951 | NaN        | NaN   |
 
 
-#### A look at a cleaned Inbound dataset for inbound tourists to a country, by inbound country and source
+#### A look at a cleaned Inbound dataset for inbound tourists to Iceland, by inbound country and source
 
 |      | Country | Variable                      | SOURCE | Year | Value   |
 |------|---------|-------------------------------|--------|------|---------|
@@ -77,13 +76,14 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 * **Value** represents total incoming tourists
 
-#### A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country
+#### A look at a cleaned Outbound dataset for outbound tourists from Iceland<sup>*</sup>, by origin country
 
 |     | Country | Variable                      | Year | Outgoing_Tourists |
 |-----|---------|-------------------------------|------|-------------------|
 | 140 | Iceland | Overnight visitors (tourists) | 2013 |         381675.00 |
 | 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
 | 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
+- <sup>*</sup> *Interesting, these numbers are greater than the total population of Iceland. Hmm...*
 
 ### GDP
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
@@ -125,9 +125,9 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 ## Analysis 
 
 ### Percent Change
-- Because of population difference, I chose to use relative changes (percent change) over time to compare a country's tourism rates and GDP
-- Most economic measures deal in percent change, so this analysis aligns with how other economic measures dealing with tourism and GDP are often reported. 
-- The information gathered from the **Cumululative Percent Change tables** below showed the countries with the most and least changes.
+- Because of population difference, I chose to look at relative changes (percent change) over time to compare a country's tourism rates and GDP. Particularly at yearly percent change. 
+- Most economic measures are reported in percent change, so this analysis aligns with how tourism and GDP are often reported. 
+- The information in the tables below show **Cumululative Percent Change**, of outbound and inbound tourism and GDP, ordered from positive to negative
 - Two countries form the top and bottom of the tables reflecting tourism change were selected for furhter analysis. 
 
 <table>
@@ -279,7 +279,7 @@ Another look at Iceland, both inbound and outbound
   - The countries that had the most positive cumulative percent change in outbound or inbound tourists saw similar trends between percent change in tourism and precent change in GDP.
   - Countries with a smaller cumulative percent change in tourism over time also saw a consistently flat year-on-year percent change in GDP (percent change that hover around 0)
 - Iceland, whose tourism increased the most (both inbound and outbound), did not have a very high cumulative GDP percent change. Iceland is a unique country for other reasons including having a very small population, and a boom in popularity after the 2011 volcano erpution. 
-- The source data  was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
+- The source data  was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country. I  would like to get more information on exactly how the inbound and outbound data were collected beyond the brief descriptions on the OECD website.
 
 ### Further Analysis:
 * It would be interesting to compare the actual tourism and GDP percent growth correlations of all countries investigated in the percent change. 
