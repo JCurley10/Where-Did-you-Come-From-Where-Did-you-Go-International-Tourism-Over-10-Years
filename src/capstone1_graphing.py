@@ -18,10 +18,10 @@ fix, ax = plt.subplots(1, 1, figsize =(18, 8), dpi = 256)
 ax.plot(total_eu_gdp, color = "green")
 ax.tick_params(axis='both', which='major', labelsize=16)
 ax.set_ylabel("GDP in Current UDS (in Trillions)", fontsize = 18)
-ax.set_title("GDP in current USD, \n from 2008 - 2018", fontsize = 24)
+ax.set_title("Cumulative GDP for Europen Countries \n in current USD", fontsize = 24)
 plt.tight_layout()
 # plt.show
-# plt.savefig('gdp.png')
+plt.savefig('../images/gdp.png')
 
 '''
 # TOURISM 
