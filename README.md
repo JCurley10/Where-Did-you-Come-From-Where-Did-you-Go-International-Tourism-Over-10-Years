@@ -18,7 +18,7 @@ It seems like *everyone* has been traveling a lot over the past decade, particul
 It also seems like the econonmic health of Europe has never been better. But is that true? And are these two phenonemna related?
 
 ## Motivation
-|<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Prague.JPG" alt="prague" width="250" height="250"> |
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/slovenia.png" alt="Slovenia" width="250" height="250">  |
 <p>(Personal Photos. Location from left to right: The Louvre, Paris; Charles Bridge, Prauge; Ljubliana, Slovenia)
@@ -102,9 +102,22 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 ## EDA 
 
-#### A look at the tourism change overtime, to and from Iceland 
+#### General Trends
+
+Looking at the the trend of the countries that had the most reported inbound or outbound tourist numbers reported, ever. (It turned out, all the most inbound tourism numbers came from 2018!)
+
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply">
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand_no_france.png" alt = "most_incoming_demand">
+France is a major outlier. Let's see these values without France.
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand.png" alt = "incoming_no_france">
 
 
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing.png" alt = "most_outgoing">
+Germany is a major outlier. Let's see these values without Germany
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing_no_germany.png" alt = "outgoing_no_germany">
 
 ## Analysis 
 <table>
