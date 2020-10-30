@@ -23,7 +23,7 @@
 It seems like *everyone* has been traveling to Europe a lot in the past decade. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
 It also seems like the econonmic health of Europe has never been better. But is *that* true? And are these two phenonemna related?
 
-Do the numbers match the stories? If so, why is there a change? I also assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
+I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
 
 
 ## The Questions
@@ -41,8 +41,8 @@ While I will not be able to make any conclusions about the relationship between 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - **A tourist** is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
   - In the purpose of this analysis, 
-- **Inbound tourism** comprises the activities of a non-resident visitor within the country of reference. 
-  - For the purpose of this analysis, I used the descriptor for "Overnight visitors (tourists)" to define Inbound tourists. These terms may be used interchangeably throughout this file<sup>2</sup>
+- **Inbound tourism** comprises the activities of a non-resident visitor within the country of reference. <sup>2</sup>
+- For the purpose of this analysis, I used the information described under the **"Overnight visitors (tourists)"** feature in tourism numbers from the Inbound Tourism and Outbound Tourism datasets under the descriptor  to describe . These terms may be used interchangeably throughout this file
  
 
 ## The Data
@@ -50,7 +50,7 @@ While I will not be able to make any conclusions about the relationship between 
 ### The data I used come from three separate datasets: Inbound Tourists, Outbound Tourists, and GDP (Current USD)
 
 ### Inbound and Outbound Tourists: 
-The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
+The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, the Organisation for Economic Co-operation and Development which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
 
 #### Important Features of the Data Sets 
 - The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
@@ -102,23 +102,24 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 ### General Trends of Inbound and Outbound data
 
-Looking at the the trend of the countries that reported the most inbound or outbound tourist numbers ever reported, ever. (It turned out, all the highest inbound tourism numbers came from 2018!)
+#### Looking at the the trend of the countries that reported the most inbound or outbound tourist numbers ever reported. (It turned out, all the highest inbound tourism numbers came from 2018!)
 
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand.png" alt = "incoming_no_france">
 
-France is a major outlier. Let's see these values without France.
+#### France is a major outlier. Let's see these values without France.
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand_no_france.png" alt = "most_incoming_demand">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing.png" alt = "most_outgoing">
 
-Germany is a major outlier. Let's see these values without Germany
+#### Germany is a major outlier. Let's see these values without Germany
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing_no_germany.png" alt = "outgoing_no_germany">
 
 ### GDP over time
+#### The cumulative GDP for the 28 European countries examined in this study 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/gdp.png" alt = "GDP">
 
 ## Analysis 
@@ -235,30 +236,32 @@ Germany is a major outlier. Let's see these values without Germany
 
 ### Tourism Vs. GDP
 
-#### Outbound Tourism vs. GDP 
+### Outbound Tourism vs. GDP 
 - The following eight graphs show the **percent change** of outbound or inbound tourism and percent change of GDP, both being relative to the previous year. <p>
 - This means that any point above the zero represents growth in that year compared to the previous year.
 
-Iceland and Malta had high cumulative percent change over time in outbound tourists
+#### Iceland and Malta had high cumulative percent change over time in outbound tourists
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_reg.png" alt = "iceland_out_gdp">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Malta_gdp_outbound_reg.png" alt = "malta_out">
 
-Romania and Latvia had negative cumulative percent change in outgoing tourists
+#### Romania and Latvia had negative cumulative percent change in outgoing tourists
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_reg.png" alt = "romania_out">
+
+<img stc = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_line.png" alt = "romania_line">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Latvia_gdp_outbound_reg.png" alt = "latvia_out">
 
 ### Inbound Tourism Vs. GDP
 
-Iceland and Slovenia had a high cumulative percent change over time in inbound tourist counts
+#### Iceland and Slovenia had a high cumulative percent change over time in inbound tourist counts
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_inbound_reg.png" alt = "iceland_in_gdp">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Slovenia_gdp_inbound_reg.png" alt = "slovenia_in">
 
-France and Swizerland had a very low cumulative percent change over time in inbound tourist counts
+#### France and Luxembourg had a very low cumulative percent change over time in inbound tourist counts
 (Sweden, Estonia, Norway did not have enough data reported to compare to GDP)
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/France_gdp_inbound_reg.png" alt = "france_in">
 
@@ -272,14 +275,17 @@ Another look at Iceland, both inbound and outbound
 
 ## Conclusion and Further Analysis
 
-- In the four countries examined of the Inbound dataset, it appears that there is a relationship between the rate of change of GDP and Inbound tourism:
-  - The countries that had a positive percent change in GDP had a regularly positive, and increasing percent change in GDP and a similarly stady positive percent change increase of inbound tourists. 
-  - For countries with a relatively flat percent change in GDP, they saw a relatively flat percent change (percent change that hover around 0) in inbound or outbound tourists. 
+### Conclusions
+- In the seven countries investigated above, there appears to be a relationship between the rate of change of GDP and Inbound tourism:
+  - The countries that had the most positive cumulative percent change in outbound or inbound tourists saw similar trends between percent change in tourism and precent change in GDP.
+  - Countries with a smaller cumulative percent change in tourism over time also saw a consistently flat year-on-year percent change in GDP (percent change that hover around 0)
 - Iceland, whose tourism increased the most (both inbound and outbound), did not have a very high cumulative GDP percent change. Iceland is a unique country for other reasons including having a very small population, and a boom in popularity after the 2011 volcano erpution. 
+- The source data  was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
 
-* The source data also was difficult to manage, as each country may report toursim information differently, and there is no perfect way to count *real* tourists entering or leaving a country 
+### Further Analysis:
+* It would be interesting to compare the actual tourism and GDP percent growth correlations of all countries investigated in the percent change. 
 * It would be valuable to compare the change in per-capita GDP to tourist rates by population in the future
-* It would be interesting to look at more than just GDP as a comparitive measure against tourism numbers
+* It would be interesting to look at more than just GDP as a comparitive measure against tourism numbers (See Iceland!) 
 
 ----
 
