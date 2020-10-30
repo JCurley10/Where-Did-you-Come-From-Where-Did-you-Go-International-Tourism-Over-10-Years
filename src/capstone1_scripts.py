@@ -234,7 +234,7 @@ cum_pct_change_out = cum_pct_change_out.T
 
 # Make dataframes of the percent changes to graph later 
 pct_change_in = pd.DataFrame(pct_dictionary_in).rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018}).T
-pct_change_out = pct_change_in = pd.DataFrame(pct_dictionary_out).rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018}).T
+pct_change_out = pd.DataFrame(pct_dictionary_out).rename(index = {0:2008, 1: 2009, 2: 2010, 3:2011, 4:2012, 5:2013, 6:2014, 7:2015, 8:2016, 9:2017, 10:2018}).T
 
 '''
 GDP DATA
@@ -249,8 +249,6 @@ gdp_by_years = gdp_by_years[gdp_by_years['Country Name'].isin(schen_eu_countries
 
 #Get the Percent Change of GDP DataFrame
 gdp_pct_change = gdp_by_years.set_index('Country Name').pct_change(axis = 'columns')
-
-
 
 
 
@@ -270,14 +268,19 @@ if __name__ == '__main__':
 
     # print (outbound_df.head())
     # print (all_outbound_tourists_df.head())
-    # print (all_outbound_tourists_df[all_outbound_tourists_df['Country']=='Germany'])
+   
+    # print (all_outbound_tourists_df[all_outbound_tourists_df['Country']=='Iceland']) #check membership
     # print (merged_inbound_and_outbound_tourists_df.columns)
 
     ## Find the top countries with most percent change of in and outbound tourists
-    # print ("list of final reported cumulative percent change for incoming tourists:", cum_pct_change_in.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
-    # print ("list of final reported cumulative percent change for outgoing tourists", cum_pct_change_out.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
-    #print (gdp.head())
+    # print ("list of final reported cumulative percent change for incoming tourists: \n", cum_pct_change_in.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
+    # print ("list of final reported cumulative percent change for outgoing tourists: \n", cum_pct_change_out.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
+    
+    # print ("Percent change of incoming tourists over time: \n", pct_change_in)
+    # print ("Percent change of outgoing tourists over time: \n", pct_change_out)
+    
+    # print (gdp.head())
     # print (gdp_by_years.head())
-    # print (gdp_pct_change)
-    print ("list of final reported cumulative percent change of GDP, gdp_pct_change.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
+    # print ("GDP percent change over time: \n", gdp_pct_change)
+    # print ("list of final reported cumulative percent change of GDP:", gdp_pct_change.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
     pass
