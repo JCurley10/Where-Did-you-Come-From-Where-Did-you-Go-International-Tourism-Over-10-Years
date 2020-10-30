@@ -54,7 +54,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 #### Important Features of the Data Sets 
 - The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
 - the ```Value``` represents the total population of the "Variable" indicator. For the purposes of this study, they are the total incoming tourists to the country in the ```Country``` column.
-- The ```source```<sup>3</sup> column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
+- The ```source```column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
     
     
 **A brief look at the raw data from the Inbound Tourism Dataset**
