@@ -12,13 +12,14 @@ from capstone1_scripts import *
 '''
 
 #Graph at the total EU GDP over time 
+sns.set_style("whitegrid")
 total_eu_gdp = gdp_by_years.set_index('Country Name').sum()
 
 fix, ax = plt.subplots(1, 1, figsize =(18, 8), dpi = 256)
 ax.plot(total_eu_gdp, color = "green")
 ax.tick_params(axis='both', which='major', labelsize=16)
 ax.set_ylabel("GDP in Current UDS (in Trillions)", fontsize = 18)
-ax.set_title("Cumulative GDP for Europen Countries \n in current USD", fontsize = 24)
+ax.set_title("Total GDP for European Countries Over Time \n in current USD", fontsize = 24)
 plt.tight_layout()
 # plt.show
 plt.savefig('../images/gdp.png')
@@ -158,12 +159,13 @@ germany_in = make_df_to_graph('Germany', 'inbound').reset_index()
 austria_in = make_df_to_graph('Austria', 'inbound').reset_index()
 greece_in = make_df_to_graph('Greece', 'inbound').reset_index()
 
-def tourists_in_from_supply_graph(show = False, save = False):
+def tourists_in_from_supply_graph(indicator, show = False, save = False):
     '''
     Shows or saves the graph depending on the action
     passed in as an argument
 
     Parameters:
+        
         show (bool): default to False. Change to True
              to show the graph
         save (bool) : default to False. Change to True
@@ -205,7 +207,7 @@ sweden_in = make_df_to_graph('Sweden', 'inbound').reset_index()
 ireland_in = make_df_to_graph('Ireland', 'inbound').reset_index()
 malta_in = make_df_to_graph('Malta', 'inbound').reset_index()
 iceland_in = make_df_to_graph('Iceland', 'inbound').reset_index()
-
+finland_in = make_df_to_graph('Finland', 'inbound').reset_index()
 
 def tourists_in_from_demand_graph(show = False, save = False):
     '''
@@ -227,6 +229,7 @@ def tourists_in_from_demand_graph(show = False, save = False):
     ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
 
     #Choose to eliminate Spain since it is a big outlier
+
     ax.plot(france_in['Year'], france_in['Value'] , color = 'darkturquoise', ls = 'dashed', label = 'France', marker ='o')
     ax.plot(denmark_in['Year'], denmark_in['Value'], color = 'mediumturquoise', ls = 'solid',  label = 'Denmark', marker = 'o')
     ax.plot(sweden_in['Year'], sweden_in['Value'], color = 'teal', ls = ":", lw = 2, label = 'Sweden', marker = 'o')
