@@ -172,7 +172,7 @@ def tourists_in_from_supply_graph(show = False, save = False):
     Returns:
         None
     '''
-
+    sns.set_style('whitegrid')
     fig, ax = plt.subplots(1, 1, figsize=(18, 8), dpi = 256)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
@@ -221,7 +221,7 @@ def tourists_in_from_demand_graph(show = False, save = False):
     Returns:
         None
     '''
-
+    sns.set_style('whitegrid')
     fig, ax = plt.subplots(1, 1, figsize=(20, 8), dpi = 256)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
@@ -273,7 +273,7 @@ def regplot_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show
         save (bool) : default to False. Change if you want to save the figure
 
      '''
-
+    sns.set_style('whitegrid')
     fig, ax = plt.subplots(1, 1, figsize=(11, 8), dpi = 256)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.set_ylim(y_lim)
@@ -369,14 +369,14 @@ if __name__ == '__main__':
     # print (tourists_in_from_demand_graph(show=True, save = False))
     # print (tourists_in_from_supply_graph(show = True, save = False))
 
-    regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True)
-    # print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
-    # print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
+    # regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True)
+    print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
+    print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
 
-    # print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
     
     # print (line_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
     # print (line_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
