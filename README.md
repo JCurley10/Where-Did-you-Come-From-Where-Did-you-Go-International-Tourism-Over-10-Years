@@ -39,7 +39,7 @@ While I will not be able to make any conclusions about the relationship between 
 
 ## Key Terms and Definitions
 
-- **European Countries**: Throughout this project are defined as the union of countries from the Schengen region and the EU, which are the following 28<sup>1</sup>, countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.``` 
+- **European Countries**: Throughout this project are defined as the union of countries from the Schengen region and the EU, which are the following 28 countries<sup>1</sup> (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.``` 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - **A tourist** is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
@@ -100,12 +100,18 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 | Afghanistan  | AFG          | GDP (current US$) | NY.GDP.MKTP.CD | 537777811.1 | 548888895.6 | 546666677.8 | 751111191.1 | 800000044.4 | 1006666638 | 1399999967 | 1673333418 | 1373333367 | 1408888922 | 1748886596 | 1831108971 | 1595555476 | 1733333264 | 2155555498 | 2366666616 | 2555555567 | 2953333418 | 3300000109 | 3697940410 | 3641723322 | 3478787909 |            |            |            |            |             |             |             |             |             |             |             |            |            |            |            |            |            |            |            |            | 4055179566  | 4515558808  | 5226778809  | 6209137625  | 6971285595  | 9747879532  | 10109225814 | 12439087077 | 15856574731 | 17804292964 | 20001598506 | 20561069558 | 20484885120 | 19907111419 | 19362642267 | 20191760000 | 19484384937 | 19101353833 |
 | Angola       | AGO          | GDP (current US$) | NY.GDP.MKTP.CD |             |             |             |             |             |            |            |            |            |            |            |            |            |            |            |            |            |            |            |            | 5930503401 | 5550483036 | 5550483036 | 5784341596 | 6131475065 | 7553560459 | 7072063345  | 8083872012  | 8769250550  | 10201099040 | 11228764963 | 10603784541 | 8307810974  | 5768720422 | 4438321017 | 5538749260 | 7526446606 | 7648377413 | 6506229607 | 6152922943 | 9129594819 | 8936063723 | 15285594828 | 17812705294 | 23552052408 | 36970918699 | 52381006892 | 65266452081 | 88538611205 | 70307163678 | 83799496611 | 1.12E+11    | 1.28E+11    | 1.37E+11    | 1.46E+11    | 1.16E+11    | 1.01E+11    | 1.22E+11    | 1.01E+11    | 94635415870 |
 
+### A look at the cleaned GDP Dataset
+|      | Country | 2008            | 2009            | 2010            | 2011            | 2012            | 2013            | 2014            | 2015            | 2016            | 2017            | 2018            |
+|------|---------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+| 1220 | Austria | 430000000000.00 | 400000000000.00 | 392000000000.00 | 431000000000.00 | 409000000000.00 | 430000000000.00 | 442000000000.00 | 382000000000.00 | 395000000000.00 | 418000000000.00 | 456000000000.00 |
+|   15 | Belgium | 515000000000.00 | 481000000000.00 | 481000000000.00 | 523000000000.00 | 496000000000.00 | 522000000000.00 | 535000000000.00 | 462000000000.00 | 476000000000.00 | 504000000000.00 | 543000000000.00 |
+
 
 ## EDA 
 
 ### General Trends of Inbound and Outbound data
 
-Looking at the the trend of the countries that had the most reported inbound or outbound tourist numbers reported, ever. (It turned out, all the most inbound tourism numbers came from 2018!)
+Looking at the the trend of the countries that reported the most inbound or outbound tourist numbers ever reported, ever. (It turned out, all the highest inbound tourism numbers came from 2018!)
 
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply">
 
@@ -237,8 +243,37 @@ Germany is a major outlier. Let's see these values without Germany
 
 ### Tourism Vs. GDP
 
+#### Outbound Tourism vs. GDP 
+The following eight graphs show the percent change of outbound tourism and GDP comparitively, along with a trendline. 
 
+Iceland and Malta had high cumulative percent change over time in outbound tourists
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_reg.png" alt = "iceland_out_gdp">
 
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Malta_gdp_outbound_reg.png" alt = "malta_out">
+
+Romania and Latvia had negative cumulative percent change in outgoing tourists
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_reg.png" alt = "romania_out">
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Latvia_gdp_outbound_reg.png" alt = "latvia_out">
+
+### Inbound Tourism Vs. GDP
+
+Iceland and Slovenia had a high cumulative percent change over time in inbound tourist counts
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_inbound_reg.png" alt = "iceland_in_gdp">
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Slovenia_gdp_inbound_reg.png" alt = "slovenia_in">
+
+France and Swizerland had a very low cumulative percent change over time in inbound tourist counts
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/France_gdp_inbound_reg.png" alt = "france_in">
+
+<img src =https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Switzerland_gdp_inbound_reg.png alt = "swiss_in">
+
+Another look at iceland, both inbound and outbound 
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/iceland_gdp_inbound_line.png" alt = "iceland_in_line" >
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_line.png" alt = "iceland_out_line" >
 
 
 ## Conclusion and Further Analysis
