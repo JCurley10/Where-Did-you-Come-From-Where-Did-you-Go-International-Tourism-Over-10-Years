@@ -1,6 +1,7 @@
 # Where did you Come From, Where did you go? International Tourism Over 10 Years, with a focus on European Countries
 ## Investigating International Tourism to and from European countries over 2008 - 2018, and the relationship to GDP and world events
 
+
 ## Table of Contents
 - [Background](#Background)
 - [Motivation](#Motivation)
@@ -37,24 +38,28 @@ While I will not be able to make any conclusions about the relationship between 
 
 ## Key Terms and Definitions
 
-### For this project, I focused on tourism to and from European countries between 2008 and 2009. 
-
-* **European Countries** here are defined as the union of countries from the Schengen region and the EU, which are the following 28<sup>1</sup>, countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.``` 
-
-## The following terms and definitions are taken from the Organisation for Economic Co-Operation and Development (OECD)<sup>2</sup>
-
+- **European Countries**: Throughout this project are defined as the union of countries from the Schengen region and the EU, which are the following 28<sup>1</sup>, countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.``` 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
 - **A tourist** is a visitor if his/her trip includes an overnight stay; otherwise, a visitor is classified as a same-day visitor (or excursionist). 
   - In the purpose of this analysis, 
 - **Inbound tourism** comprises the activities of a non-resident visitor within the country of reference. 
-  - For the purpose of this analysis, I used the descriptor for "Overnight visitors (tourists)" to define Inbound tourists. These terms may be used interchangeably throughout this file
-
+  - For the purpose of this analysis, I used the descriptor for "Overnight visitors (tourists)" to define Inbound tourists. These terms may be used interchangeably throughout this file<sup>2</sup>
+ 
 
 ## The Data
-- I pulled data from three sources looking at outgoing and incoming tourists from/to countries, and the GDP of those countries.
-- The data for incoming and outgoing tourists numbers I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
 
+### The data I used come from three separate datasets: Incoming Tourists, Outgoing Tourists, and GDP (Current USD)
+
+#### Incoming and Outgoing Tourists: 
+The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](https://www.kaggle.com/nubatama/tourism-inout-statdata-from-oecd) from Kaggle.com. The [original data](https://stats.oecd.org/Index.aspx?QueryId=95071) come from published queries from their respective datasets from the OECD, which is an international organization that collects and provides data publicly to support evidence-based policy across the globe.
+
+### Important Features of the Data Sets 
+- The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
+- the ```Value``` represents the total population of the "Variable" indicator. For the purposes of this study, they are the total incoming tourists to the country in the ```Country``` column.
+- The ```source```<sup>3</sup> column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys```. I looked at tourism data from one survey per country depending on availability, and only compared incoming tourists in countries grouped by source survey.<sup>3</sup>. 
+    
+    
 **A brief look at the raw data from the Inbound Tourism Dataset**
 
 |      | COUNTRY | Country |                     VARIABLE |                        Variable | SOURCE |                 Source | YEAR | Year |   Value | Flag Codes | Flags |
@@ -63,30 +68,18 @@ While I will not be able to make any conclusions about the relationship between 
 | 1542 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2014 | 2014 | 1106718 | NaN        | NaN   |
 | 1543 | ISL     | Iceland | INB_ACCOMM_OTHER_COLL_NIGHTS | Other collective establishments | SUPPLY | Tourism supply surveys | 2015 | 2015 | 1259951 | NaN        | NaN   |
 
-- original "inbound" dataset, showing the first three rows for the Czech Republic, one of the 28 countries I investigated.
 
-**A note on the features** 
-- The ```Variable``` column had 87 total indicators such as ```Total International Arrivals```, ```Nights in all types of accommodation```, ```Same-day visitors (excursionists)```, or a country name to indicate where the tourists came from. I only used the information from the ```Overnight visitors (tourists)``` rows as the definition aligned with my research. 
-- the ```Value``` represents the total population of the "Variable" indicator. For the purposes of this study, they are the total incoming tourists to the country in the ```Country``` column.
-- The ```source``` column represents from which survey the data was collected. Some countries had collected data in both ```Tourism supply surveys``` or ```Tourism demand surveys
-
-- **Notes on the Source data in the "Incoming Tourists" Dataset**:
-  - In my analysis, I chose the ```SOURCE``` column as it was less to type.
-  - After digging into the type of information collected in the different surveys (Supply or Demand), there was a clear difference in the reported numbers of travelers depending on which survey was used. There is, however, consistency among countries within one type of survey reported. While some countries had reported information from both surveys, others did not. Therefore, I used my discretion and will used the information first from the Supply source. If the country did not report Supply data, I used the Demand source. 
-  - For this reason, I will only compare countries against each other as long as they come from the same source:
-    - Countries whose data come from the Tourism supply surveys, grouped under ```SUPPLY ```: Austria, Belgium, Czech Republic, Finland, Germany, Greece, Hungary, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Romania, and Slovenia```
-    - Countries whose data come from the Tourism demand surveys, grouped under  ```DEMAND```: ```Denmark, France, Iceland, Ireland, Malta, Sweden```
-    
 #### A look at a cleaned Inbound dataset for inbound tourists to a country, by inbound country and source
-**Value** represents total incoming tourists
+
 |      | Country | Variable                      | SOURCE | Year | Value   |
 |------|---------|-------------------------------|--------|------|---------|
 | 1571 | Iceland | Overnight visitors (tourists) | DEMAND | 2013 |  807349 |
 | 1572 | Iceland | Overnight visitors (tourists) | DEMAND | 2014 |  997556 |
 | 1573 | Iceland | Overnight visitors (tourists) | DEMAND | 2015 | 1289139 |
 
+* **Value** represents total incoming tourists
 
-A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
+#### A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
 
 |     | Country | Variable                      | Year | Outgoing_Tourists |
 |-----|---------|-------------------------------|------|-------------------|
@@ -94,6 +87,8 @@ A look at a cleaned Outbound dataset for outbound tourists from a country, by or
 | 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
 | 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
 
+
+    
 **A brief look at the raw data from the GDP dataset**
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
 - The GDP is in current USD, for the sake of continuity. 
@@ -225,6 +220,11 @@ There is clearly something different or misleading about where the inbound and o
 ----
 
 <sup>1</sup> Bulgaria would technically fit this description, but there was limited data on incoming tourists from Bulgaria in the data <p>
-<sup>2</sup> [stats.oecd.org](https://stats.oecd.org) <p>
-<sup>3</sup> [Original datasets found here](https://stats.oecd.org/Index.aspx?QueryId=95071)
+<sup>2</sup> Defintions taken from [stats.oecd.org](https://stats.oecd.org) <p>
+ <sup>3</sup> Notes on the Source data in the "Incoming Tourists" Dataset: 
+  - In my analysis, I chose the ```SOURCE``` column as it was less to type.
+  - After digging into the type of information collected in the different surveys (Supply or Demand), there was a clear difference in the reported numbers of travelers depending on which survey was used. There is, however, consistency among countries within one type of survey reported. While some countries had reported information from both surveys, others did not. Therefore, I used my discretion and will used the information first from the Supply source. If the country did not report Supply data, I used the Demand source. 
+    - Countries whose data come from the Tourism SUPPLY surveys, grouped under ```SUPPLY ```: Austria, Belgium, Czech Republic, Finland, Germany, Greece, Hungary, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Romania, and Slovenia```
+    - Countries whose data come from the Tourism DEMAND surveys, grouped under  ```DEMAND```: ```Denmark, France, Iceland, Ireland, Malta, Sweden```
+
 
