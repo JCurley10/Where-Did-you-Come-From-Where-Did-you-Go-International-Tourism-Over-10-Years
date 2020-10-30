@@ -83,7 +83,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 | 140 | Iceland | Overnight visitors (tourists) | 2013 |         381675.00 |
 | 141 | Iceland | Overnight visitors (tourists) | 2014 |         413291.00 |
 | 142 | Iceland | Overnight visitors (tourists) | 2015 |         467437.00 |
-- <sup>*</sup> *Interesting, these numbers are greater than the total population of Iceland. Hmm...
+- <sup>*</sup> *Interesting, these numbers are greater than the total population of Iceland. Hmm...*
 
 ### GDP
 - The data for the GDP come form the dataset [GDP in Current USD](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD) from the World Bank
