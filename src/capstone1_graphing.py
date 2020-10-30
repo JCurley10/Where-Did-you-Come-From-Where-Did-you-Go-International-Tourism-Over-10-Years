@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import matplotlib.ticker as ticker
 from capstone1_scripts import *
 
 ## EDA
@@ -20,52 +21,52 @@ most_inb_demand = most_inbound_tourists_demand.head(6)
 
 ## TO DO: make these next three code automated for all inbound or outbound, using the above variable dataframes
 
-## This makes a Bar graph 5 countries with most outbounds of all time
-sns.set_style('whitegrid')
+# ## This makes a Bar graph 5 countries with most outbounds of all time
+# sns.set_style('whitegrid')
 
-fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
-ax.bar(most_out['Country'], most_out['Outgoing_Tourists'], color = 'indianred')
-ax.tick_params(axis='both', which='major', labelsize=18)
-# ax.set_xlabel('Countries', fontsize = 20) #probably don't ened this, is self explanatory in the tick labels
-ax.set_ylabel('Number of Outbound Tourists In 1 Year (in millions)',  fontsize = 20)
-ax.set_title('Countries with Most Outbound Tourists in 2018', size = 30)
+# fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
+# ax.bar(most_out['Country'], most_out['Outgoing_Tourists'], color = 'indianred')
+# ax.tick_params(axis='both', which='major', labelsize=18)
+# # ax.set_xlabel('Countries', fontsize = 20) #probably don't ened this, is self explanatory in the tick labels
+# ax.set_ylabel('Number of Outbound Tourists In 1 Year (in millions)',  fontsize = 20)
+# ax.set_title('Countries with Most Outbound Tourists in 2018', size = 30)
 
-for idx, data in enumerate(most_out['Outgoing_Tourists']):
-    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
-plt.tight_layout()
-# plt.show()
+# for idx, data in enumerate(most_out['Outgoing_Tourists']):
+#     plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
+# plt.tight_layout()
+# # plt.show()
 
-# Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
+## Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
 
-sns.set_style('whitegrid')
-fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
-ax.bar(most_inb_supply['Country'], most_inb_supply['Value.supply'], color = 'cornflowerblue')
+# sns.set_style('whitegrid')
+# fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
+# ax.bar(most_inb_supply['Country'], most_inb_supply['Value.supply'], color = 'cornflowerblue')
 
-ax.tick_params(axis='both', which='major', labelsize=18)
-# ax.set_xlabel('Countries', fontsize = 20)
-ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
-ax.set_title('Countries with Most Inbound Tourists in 2018', size = 30)
+# ax.tick_params(axis='both', which='major', labelsize=18)
+# # ax.set_xlabel('Countries', fontsize = 20)
+# ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
+# ax.set_title('Countries with Most Inbound Tourists in 2018', size = 30)
 
-for idx, data in enumerate(most_inb_supply['Value.supply']):
-    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
-plt.tight_layout()
-# plt.show()
+# for idx, data in enumerate(most_inb_supply['Value.supply']):
+#     plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
+# plt.tight_layout()
+# # plt.show()
 
 ''''''
-# Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
+# # Plot countries with top most inbound of all time, coming from the supply survey (the year this occured = 2018)
 
-sns.set_style('whitegrid')
-fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
-ax.bar(most_inb_demand['Country'], most_inb_demand['Value.demand'], color = 'royalblue')
+# sns.set_style('whitegrid')
+# fig, ax = plt.subplots(1, 1, figsize = (18, 8), dpi = 256)
+# ax.bar(most_inb_demand['Country'], most_inb_demand['Value.demand'], color = 'royalblue')
 
-ax.tick_params(axis='both', which='major', labelsize=18)
-# ax.set_xlabel('Countries', fontsize = 20)
-ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
-ax.set_title('Countries with Most Inbound Tourists in 2018  \n from the Demand survey', size = 30)
+# ax.tick_params(axis='both', which='major', labelsize=18)
+# # ax.set_xlabel('Countries', fontsize = 20)
+# ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 20)
+# ax.set_title('Countries with Most Inbound Tourists in 2018  \n from the Demand survey', size = 30)
 
-for idx, data in enumerate(most_inb_demand['Value.demand']):
-    plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
-plt.tight_layout()
+# for idx, data in enumerate(most_inb_demand['Value.demand']):
+#     plt.text(x=idx, y = data , s = f"{data: ,.0f}", ha = 'center', fontsize = 20, color = 'black')
+# plt.tight_layout()
 
 
 
@@ -107,11 +108,11 @@ def tourists_out_graph(action):
     ax.set_title('Outgoing Tourists Over Time, \n for Countries with the Most Outgoing Tourists in 2018', fontsize = 20)
     plt.legend(fontsize = 16)
 
-    if action == 'show':
-        plt.show()
+    # if action == 'show':
+    #     plt.show()
         
-    elif action == "save"
-        plt.savefig('images/most_outgoing.png')
+    # elif action == "save":
+    #     plt.savefig('images/most_outgoing.png')
 
 ''''''
 
@@ -148,11 +149,11 @@ def tourists_in_from_supply_graph(action):
     plt.legend(fontsize = 16, numpoints = 1)
     plt.tight_layout()
 
-    if action == 'show':
-        plt.show()
+    # if action == 'show':
+    #     plt.show()
         
-    elif action == "save"
-        plt.savefig('images/most_incoming_supply.png')
+    # elif action == "save":
+    #     plt.savefig('images/most_incoming_supply.png')
 
 
 ## Graph Incoming tourists over time for countries in the Demand survey 
@@ -163,6 +164,7 @@ sweden_in = make_df_to_graph('Sweden', 'inbound').reset_index()
 ireland_in = make_df_to_graph('Ireland', 'inbound').reset_index()
 malta_in = make_df_to_graph('Malta', 'inbound').reset_index()
 iceland_in = make_df_to_graph('Iceland', 'inbound').reset_index()
+
 
 def tourists_in_from_demand_graph(action):
     '''
@@ -191,13 +193,122 @@ def tourists_in_from_demand_graph(action):
     plt.legend(fontsize = 16, numpoints = 1)
     plt.tight_layout()
     
-    if action == 'show':
-        plt.show()
+    # if action == 'show':
+    #     plt.show()
         
-    elif action == "save"
-        plt.savefig('../images/most_incoming_demand.png')
+    # elif action == "save":
+    #     plt.savefig('../images/most_incoming_demand.png')
 
 
+
+# TO DO: Make functions that make comparison graphs with simple arguments 
+
+
+
+
+# Compare GDP and Country with regplot
+def regplot_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = True, save = False):
+
+    '''
+    Mkes a scatter plot with linear regression line and confidence interval 
+    that compares the GDP and the incoming or outgoing tourists 
+
+    Parameters:
+
+        country (str) : which country to get the comparison of 
+
+        indicator (str) : "inbound" or "outbound". This determines which 
+                    percent change DataFrame to pull from
+        
+        y_lim (tuple of floats) : the y-limit of the window view, 
+                    Default to (-.2, 0.5),
+        
+        color (str) : the color you want to make your country plot
+
+        show (bool) : default to True. Change if you want to show the figure
+
+        save (bool) : default to False. Change if you want to save the figure
+
+     '''
+
+    fig, ax = plt.subplots(1, 1, figsize=(11, 8), dpi = 256)
+    ax.tick_params(axis='both', which='major', labelsize=16)
+    ax.set_ylim(y_lim)
+    ax.axhline(y=0, color = 'grey')
+
+    sns.regplot(x= list(range(2008, 2019)), y = gdp_pct_change.loc[country], data = gdp_pct_change, color = "green", label = "percent change of GDP")
+    if indicator == "inbound":
+        sns.regplot(x = list(range(2008, 2019)), y = pct_change_in.loc[country], data = pct_change_in, color = color, label = f"percent change of {indicator} tourists to {country}")
+    elif indicator == "outbound":
+        sns.regplot(x = list(range(2008, 2019)), y = pct_change_out.loc[country], data = pct_change_out, color = color, label = f"percent change of {indicator} tourists from {country}")
+    ax.yaxis.set_major_formatter(ticker.PercentFormatter())
+
+    # plt.annotate("Potential GDP reporting issue, 2015", xy = (6, -0.02), xytext = (6, -0.08), fontsize = 12, arrowprops =dict(facecolor ='green'))
+    ax.set_title(f"Percent Change of GDP Vs. Percent Change of \n {indicator} Tourists - {country}", fontsize = 24)
+    ax.set_ylabel("Percent Change, (non-cumulative)", fontsize = 16)
+    ax.legend(loc = "upper left", fontsize = 16)
+    plt.tight_layout()
+
+    if show: 
+        plt.show()
+    if save:
+        plt.savefig(f"../images/{country}_gdp_{indicator}_reg.png")
+
+
+
+# Compare GDP and Country with line graph 
+
+def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = True, save = False):
+
+    '''
+    Makes two line graphs that compare
+    the GDP and the incoming or outgoing tourists 
+
+    Parameters:
+
+        country (str) : which country to get the comparison of 
+
+        indicator (str) : "inbound" or "outbound". This determines which 
+                    percent change DataFrame to pull from
+        
+        y_lim (tuple of floats) : the y-limit of the window view, 
+                    Default to (-.2, 0.5),
+        
+        color (str) : the color you want to make your country plot
+
+        show (bool) : default to True. Change if you want to show the figure
+
+        save (bool) : default to False. Change if you want to save the figure
+
+     '''
+
+    fig, ax = plt.subplots(1, 1, figsize=(18, 8), dpi = 256)
+    ax.tick_params(axis='both', which='major', labelsize=16)
+    ax.set_ylim(y_lim)
+    ax.axhline(y=0, color = 'grey')
+
+    ax.plot(gdp_pct_change.columns, gdp_pct_change.loc[country], color = "green", label = "percent change of GDP")
+    
+    if indicator == "inbound":
+        ax.plot(gdp_pct_change.columns, pct_change_in.loc[country], color = color, label = f"percent change of inbound tourists to {country}")
+    
+    elif indicator == "outbound":
+         ax.plot(gdp_pct_change.columns, pct_change_in.loc[country], color = color, label = f"percent change of outbound tourists from {country}")
+        
+    ax.yaxis.set_major_formatter(ticker.PercentFormatter())
+
+    # plt.annotate("Potential GDP reporting issue, 2015", xy = (6, -0.02), xytext = (6, -0.08), fontsize = 12, arrowprops =dict(facecolor ='green'))
+    ax.set_title(f"Percent Change of GDP Vs. Percent Change of \n {indicator} Tourists - {country}", fontsize = 24)
+    ax.set_ylabel("Percent Change, (non-cumulative)", fontsize = 16)
+    ax.legend(loc = "best", fontsize = 16)
+    plt.tight_layout()
+
+    if show: 
+        plt.show()
+    if save:
+        plt.savefig(f"../images/{country}_gdp_{indicator}_line")
+
+    return "done"
 
 
 
@@ -210,7 +321,21 @@ if __name__ == '__main__':
     # print (most_out)
     # print (most_inb_supply)
     # print (most_inb_demand)
-    print (tourists_in_from_demand_graph())
+    # print (tourists_in_from_demand_graph())
     # print (tourists_in_from_supply_graph)
 
+    # print(regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.3), show = False, save = True))
+    # print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
+    # print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
+
+    # print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+    
+    
+   #print (line_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
+    
+    
+    
     pass

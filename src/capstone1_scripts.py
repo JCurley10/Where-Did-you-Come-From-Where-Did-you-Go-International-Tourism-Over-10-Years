@@ -246,6 +246,14 @@ gdp = pd.read_csv('../data/GDP_Current.csv')
 gdp_by_years = gdp.loc[:, ['Country Name','2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']] 
 gdp_by_years = gdp_by_years[gdp_by_years['Country Name'].isin(schen_eu_countries)]
 
+
+#Get the Percent Change of GDP DataFrame
+gdp_pct_change = gdp_by_years.set_index('Country Name').pct_change(axis = 'columns')
+
+
+
+
+
 if __name__ == '__main__':
 
     # print (inbound_df.head())
@@ -266,10 +274,10 @@ if __name__ == '__main__':
     # print (merged_inbound_and_outbound_tourists_df.columns)
 
     ## Find the top countries with most percent change of in and outbound tourists
-    print ("list of cumulative percent change for incoming tourists:", cum_pct_change_in.max(axis = 1).sort_values(ascending = False))
-    # print ("list of cumulative percent change for outgoing tourists", cum_pct_change_out.max(axis = 1).sort_values(ascending = False))
-
+    # print ("list of final reported cumulative percent change for incoming tourists:", cum_pct_change_in.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
+    # print ("list of final reported cumulative percent change for outgoing tourists", cum_pct_change_out.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
     #print (gdp.head())
-    print (gdp_by_years.head())
-    
+    # print (gdp_by_years.head())
+    # print (gdp_pct_change)
+    print ("list of final reported cumulative percent change of GDP, gdp_pct_change.ffill(axis=1).iloc[:, -1].sort_values(ascending = False))
     pass
