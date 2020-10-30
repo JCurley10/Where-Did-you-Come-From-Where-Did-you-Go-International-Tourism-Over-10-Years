@@ -1,9 +1,9 @@
 # Where did you Come From, Where did you go? 
-## Investigating International Tourism and GDP to and from European countries over 2008 - 2018
+## Investigating International Tourism and GDP to and from European countries from 2008 to 2018
 
 
 ## Table of Contents
-- [Background](#Background)
+- [Background and Motivation](#Background-and-Motivation)
 - [Motivation](#Motivation)
 - [The Questions](#The-Questions)
 - [Key Terms](#Key-Terms)
@@ -12,22 +12,19 @@
 - [Analysis](#Analysis)
 - [Conclusion and Futher Analysis](#Conclusion-and-Further-Analysis)
 
-## Background
+## Background and Motivation
 
-It seems like *everyone* has been traveling to Europe a lot in the past decade. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
-It also seems like the econonmic health of Europe has never been better. But is *that* true? And are these two phenonemna related?
-
-## Motivation
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Prague.JPG" alt="prague" width="250" height="250"> |
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/slovenia.png" alt="Slovenia" width="250" height="250">  |
 <p>(Personal Photos. Location from left to right: The Louvre, Paris; Charles Bridge, Prauge; Ljubliana, Slovenia)
 <p>
   
-I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. For travel planning purposes, I want to know which countries in Europe saw the greatest percent change (both positive and negative) since 2008.
-<p>
-But I am also curious about why there may be a change. As a tourist, I want to consider the shape of the country I travel to. I assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
-<p>
+It seems like *everyone* has been traveling to Europe a lot in the past decade. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
+It also seems like the econonmic health of Europe has never been better. But is *that* true? And are these two phenonemna related?
+
+Do the numbers match the stories? If so, why is there a change? I also assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
+
 
 ## The Questions
 
@@ -80,7 +77,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 * **Value** represents total incoming tourists
 
-#### A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country**
+#### A look at a cleaned Outbound dataset for outbound tourists from a country, by origin country
 
 |     | Country | Variable                      | Year | Outgoing_Tourists |
 |-----|---------|-------------------------------|------|-------------------|
@@ -134,8 +131,9 @@ Germany is a major outlier. Let's see these values without Germany
 
 ### Percent Change
 - Because of population difference, I chose to use relative changes (percent change) over time to compare a country's tourism rates and GDP
-- The information gathered from the Cumululative Percent Change tables below showed the countries with the most and least changes.
-- The top 2 and bottom 2 countries of the tables reflecting tourism change were selected for furhter analysis. 
+- Most economic measures deal in percent change, so this analysis aligns with how other economic measures dealing with tourism and GDP are often reported. 
+- The information gathered from the **Cumululative Percent Change tables** below showed the countries with the most and least changes.
+- Two countries form the top and bottom of the tables reflecting tourism change were selected for furhter analysis. 
 
 <table>
   
@@ -244,7 +242,8 @@ Germany is a major outlier. Let's see these values without Germany
 ### Tourism Vs. GDP
 
 #### Outbound Tourism vs. GDP 
-The following eight graphs show the percent change of outbound tourism and GDP comparitively, along with a trendline. 
+- The following eight graphs show the **percent change** of outbound or inbound tourism and percent change of GDP, both being relative to the previous year. <p>
+- This means that any point above the zero represents growth in that year compared to the previous year.
 
 Iceland and Malta had high cumulative percent change over time in outbound tourists
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_reg.png" alt = "iceland_out_gdp">
@@ -266,9 +265,10 @@ Iceland and Slovenia had a high cumulative percent change over time in inbound t
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Slovenia_gdp_inbound_reg.png" alt = "slovenia_in">
 
 France and Swizerland had a very low cumulative percent change over time in inbound tourist counts
+(Sweden, Estonia, Norway did not have enough data reported to compare to GDP)
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/France_gdp_inbound_reg.png" alt = "france_in">
 
-<img src =https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Switzerland_gdp_inbound_reg.png alt = "swiss_in">
+<img src =https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Luxembourg_gdp_inbound_reg.png alt = "lux_in">
 
 Another look at Iceland, both inbound and outbound 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/iceland_gdp_inbound_line.png" alt = "iceland_in_line" >
@@ -278,7 +278,10 @@ Another look at Iceland, both inbound and outbound
 
 ## Conclusion and Further Analysis
 
-There is clearly something different or misleading about where the inbound and outbound tourism data come from. 
+- Overall, there appear to be some correlation between the percent change of GDP and percent change of inbound or outbound tourists, but with only looking at countries with the greatest and least change, it is only the beginning!
+- With Countries that saw a positive percent change in GDP often saw a similar trend in tours into that country
+- The source data also was difficult to manage, as each country may report toursim information differently, and there is no perfect way to tell 
+- It would be valuable to compare the change in per-capita GDP to tourist rates by population in the future
 
 
 
