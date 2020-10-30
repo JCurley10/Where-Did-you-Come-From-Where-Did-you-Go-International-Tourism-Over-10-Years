@@ -13,8 +13,8 @@
 
 ## Background
 
-With the rise of Instragram and the "wanderlust" hashtag, as well as the availability of cheap flights in the 2010s, it seems like *everyone* was traveling frequently, particularly going abroad to Europe. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. 
-
+It seems like *everyone* has been traveling a lot over the past decade, particularly going abroad to Europe. With headlines like [“Overtourism in Europe’s historic cities sparks backlash”](https://www.theguardian.com/world/2020/jan/25/overtourism-in-europe-historic-cities-sparks-backlash)(The Guardian) and [“Should You Visit These Beautiful European Destinations Suffering From Overtourism?](https://www.forbes.com/sites/ceciliarodriguez/2020/01/30/to-go-or-not-to-go-to-these-beautiful-european-places/#657e49fa29e4)(Forbes), it seems like Europe is crumbling under an unsustainable rise in tourism. But, is it true?
+It also seems like the econonmic health of Europe has never been better. But is that true? And are these two phenonemna related?
 
 ## Motivation
 |<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Paris.JPG" alt="louvre" width="250" height="250"> |
@@ -22,21 +22,26 @@ With the rise of Instragram and the "wanderlust" hashtag, as well as the availab
 <img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/slovenia.png" alt="Slovenia" width="250" height="250">  |
 <p>(Personal Photos. Location from left to right: The Louvre, Paris; Charles Bridge, Prauge; Ljubliana, Slovenia)
 <p>
-I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. (I am so curious, that I had planned to take a group of students on an international educational program to Iceland to learn about the effects of over-tourism, but sadly wasn’t able to go due to the Coronavirus.) So, for selfish purposes, I want to knnow which countries in Europe saw the greatest percent change (both positive and negative) since 2008. (Maybe that’s where I want to travel next!)
-
-But I am also curious about why there may be a change, because as a tourist, I’d want to consider the shape of the country I travel to. I assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country and to outgoing tourists from a country. While I will not be able to make any conclusions about the relationship between GDP and tourist rates-of-change, I am interested in their correlation as a start to a deeper investigation of tourism indicators. 
+  
+I became curious about the rise in tourism and if the change is really *that* drastic reading story after story about over-tourism in Europe, and if my experiences of ever-growing tourism to Europe really matched the numbers. For travel planning purposes, I want to knnow which countries in Europe saw the greatest percent change (both positive and negative) since 2008.
+<p>
+But I am also curious about why there may be a change. As a tourist, I want to consider the shape of the country I travel to. I assume that not all European countries are in the fiscal shape to attract more tourists, and not everyone has the means to travel. So, I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
+<p>
+While I will not be able to make any conclusions about the relationship between GDP and tourist rates-of-change, I am interested in their correlation as a start to a deeper investigation of tourism indicators. 
 
 ## The Questions
 
 - Which countries saw the greatest rate of change (positive and negative, if any), and least change, for both incoming and outgoing international travelers between 2008 and 2018?
+
 - How does the rate of change of GDP of a country correlate to both the incoming-tourists to that country, and outgoing-tourist rates from that country?
 
 ## Key Terms and Definitions
 
-For this project, I focused on tourism to and from European countries between 2008 and 2009. 
-* **European Countries** in this project are defined as the union of countries from the Schengen region and the EU, which are the following 29 countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.```
+### For this project, I focused on tourism to and from European countries between 2008 and 2009. 
 
-The following terms and definitions are taken from the Organisation for Economic Co-Operation and Development (OEC)<sup>1</sup>
+* **European Countries** here are defined as the union of countries from the Schengen region and the EU, which are the following 28<sup>1</sup>, countries (in no particular order): ```Austria, Belgium, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Sweden, Switzerland, Croatia, Estonia, Latvia, Lithuania, Malta, Romania, and Slovenia.``` 
+
+## The following terms and definitions are taken from the Organisation for Economic Co-Operation and Development (OECD)<sup>2</sup>
 
 - **Tourism** can be regarded as a social, cultural and economic phenomenon related to the movement of people outside their usual place of residence. Tourism refers to the activity of visitors. 
 - **A visitor** is a traveller taking a trip to a main destination outside his/her usual environment, for less than a year, for any main purpose (business, leisure or other personal purpose) other than to be employed in the country or place visited. 
@@ -218,6 +223,8 @@ There is clearly something different or misleading about where the inbound and o
 
 
 ----
-<sup>1</sup> [stats.oecd.org](https://stats.oecd.org) <p>
-<sup>2</sup> [Original datasets found here](https://stats.oecd.org/Index.aspx?QueryId=95071)
+
+<sup>1</sup> Bulgaria would technically fit this description, but there was limited data on incoming tourists from Bulgaria in the data <p>
+<sup>2</sup> [stats.oecd.org](https://stats.oecd.org) <p>
+<sup>3</sup> [Original datasets found here](https://stats.oecd.org/Index.aspx?QueryId=95071)
 
