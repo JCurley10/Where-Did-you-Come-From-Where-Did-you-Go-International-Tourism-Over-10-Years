@@ -249,7 +249,7 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_reg.png" alt = "romania_out">
 
-<img stc = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_line.png" alt = "romania_line">
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Romania_gdp_outbound_line.png" alt = "romania_line">
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Latvia_gdp_outbound_reg.png" alt = "latvia_out">
 
