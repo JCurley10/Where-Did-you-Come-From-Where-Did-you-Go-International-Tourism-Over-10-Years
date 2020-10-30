@@ -270,7 +270,7 @@ France and Swizerland had a very low cumulative percent change over time in inbo
 
 <img src =https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Switzerland_gdp_inbound_reg.png alt = "swiss_in">
 
-Another look at iceland, both inbound and outbound 
+Another look at Iceland, both inbound and outbound 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/iceland_gdp_inbound_line.png" alt = "iceland_in_line" >
 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/Iceland_gdp_outbound_line.png" alt = "iceland_out_line" >
