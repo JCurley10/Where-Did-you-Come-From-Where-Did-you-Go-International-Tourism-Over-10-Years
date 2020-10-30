@@ -259,11 +259,11 @@ if __name__ == '__main__':
     # print (inbound_supply_df.head())
     # print (inbound_demand_df.head())
 
-    czech_rep_in = make_df_to_graph('Czech Republic', 'inbound').reset_index()
-    # print (czech_rep_in)
-    czech_rep_out = make_df_to_graph('Czech Republic', 'outbound').reset_index()
-    #print (czech_rep_out)
-    czech_rep = get_country_over_time('Czech Republic', 'inbound')
+    # print (get_country_over_time('Iceland', 'inbound'))
+    # print (make_df_to_graph('Iceland', 'inbound').reset_index())
+    # print (make_df_to_graph('Iceland', 'outbound').reset_index())
+
+    
     # print (czech_rep)
 
     # print (outbound_df.head())

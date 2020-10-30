@@ -7,6 +7,26 @@ from capstone1_scripts import *
 
 ## EDA
 
+'''
+# GDP 
+'''
+
+#Graph at the total EU GDP over time 
+total_eu_gdp = gdp_by_years.set_index('Country Name').sum()
+
+fix, ax = plt.subplots(1, 1, figsize =(18, 8), dpi = 256)
+ax.plot(total_eu_gdp, color = "green")
+ax.tick_params(axis='both', which='major', labelsize=16)
+ax.set_ylabel("GDP in Current UDS (in Trillions)", fontsize = 18)
+ax.set_title("GDP in current USD, \n from 2008 - 2018", fontsize = 24)
+plt.tight_layout()
+# plt.show
+# plt.savefig('gdp.png')
+
+'''
+# TOURISM 
+'''
+
 #Find the countries with the most, ever, incoming and outgoing tourists to look at their spread 
 most_outbound_tourists = merged_inbound_and_outbound_tourists_df.groupby('Country').max('Outgoing_Tourists').sort_values('Outgoing_Tourists', ascending = False).reset_index()
 most_out = most_outbound_tourists.head()
@@ -21,8 +41,7 @@ most_inbound_tourists_demand = merged_inbound_and_outbound_tourists_df.groupby('
 most_inb_demand = most_inbound_tourists_demand.head(6)
 
 
-
-## TO DO: Make functions to draw bar graphs 
+## TO DO: Make the following three graphs into functions to make bar graphs when called 
 #for all inbound or outbound, using the above variable dataframes
 
 # ## This makes a Bar graph 5 countries with most outbounds of all time
@@ -154,7 +173,7 @@ def tourists_in_from_supply_graph(show = False, save = False):
         None
     '''
 
-    fig, ax = plt.subplots(1, 1, figsize=(20, 8), dpi = 256)
+    fig, ax = plt.subplots(1, 1, figsize=(18, 8), dpi = 256)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.set_ylabel('Number of Inbound Tourists In 1 Year (in millions)',  fontsize = 18)
 
@@ -226,8 +245,9 @@ def tourists_in_from_demand_graph(show = False, save = False):
 
 
 
-# Functions that make comparison graphs with simple arguments 
+# Analysis
 
+# Functions that make comparison graphs with simple arguments 
 
 # Compare GDP and Country with regplot
 def regplot_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = True, save = False):
@@ -303,7 +323,7 @@ def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = 
         save (bool) : default to False. Change if you want to save the figure
 
      '''
-
+    sns.set_style('whitegrid')
     fig, ax = plt.subplots(1, 1, figsize=(18, 8), dpi = 256)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.set_ylim(y_lim)
@@ -346,10 +366,10 @@ if __name__ == '__main__':
     # print (most_out)
     # print (most_inb_supply)
     # print (most_inb_demand)
-    # print (tourists_in_from_demand_graph())
-    # print (tourists_in_from_supply_graph)
+    # print (tourists_in_from_demand_graph(show=True, save = False))
+    # print (tourists_in_from_supply_graph(show = True, save = False))
 
-    # print(regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.3), show = False, save = True))
+    regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True)
     # print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
     # print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
 
