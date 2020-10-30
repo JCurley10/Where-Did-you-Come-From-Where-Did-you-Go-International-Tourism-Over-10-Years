@@ -279,11 +279,11 @@ def regplot_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show
     ax.set_ylim(y_lim)
     ax.axhline(y=0, color = 'grey')
 
-    sns.regplot(x= list(range(2008, 2019)), y = gdp_pct_change.loc[country], data = gdp_pct_change, color = "green", label = "percent change of GDP")
+    sns.regplot(x= list(range(2008, 2019)), y = gdp_pct_change.loc[country], ci = None, data = gdp_pct_change, color = "green", label = "percent change of GDP")
     if indicator == "inbound":
-        sns.regplot(x = list(range(2008, 2019)), y = pct_change_in.loc[country], data = pct_change_in, color = color, label = f"percent change of {indicator} tourists to {country}")
+        sns.regplot(x = list(range(2008, 2019)), y = pct_change_in.loc[country], ci = None, data = pct_change_in, color = color, label = f"percent change of {indicator} tourists to {country}")
     elif indicator == "outbound":
-        sns.regplot(x = list(range(2008, 2019)), y = pct_change_out.loc[country], data = pct_change_out, color = color, label = f"percent change of {indicator} tourists from {country}")
+        sns.regplot(x = list(range(2008, 2019)), y = pct_change_out.loc[country], ci = None, data = pct_change_out, color = color, label = f"percent change of {indicator} tourists from {country}")
     ax.yaxis.set_major_formatter(ticker.PercentFormatter())
 
     # plt.annotate("Potential GDP reporting issue, 2015", xy = (6, -0.02), xytext = (6, -0.08), fontsize = 12, arrowprops =dict(facecolor ='green'))
@@ -335,7 +335,7 @@ def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = 
         ax.plot(gdp_pct_change.columns, pct_change_in.loc[country], color = color, label = f"percent change of inbound tourists to {country}")
     
     elif indicator == "outbound":
-         ax.plot(gdp_pct_change.columns, pct_change_in.loc[country], color = color, label = f"percent change of outbound tourists from {country}")
+         ax.plot(gdp_pct_change.columns, pct_change_out.loc[country], color = color, label = f"percent change of outbound tourists from {country}")
         
     ax.yaxis.set_major_formatter(ticker.PercentFormatter())
     
@@ -369,15 +369,15 @@ if __name__ == '__main__':
     # print (tourists_in_from_demand_graph(show=False, save = True))
     # print (tourists_in_from_supply_graph(show = False, save = True))
 
-    # regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True)
-    # print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
-    # print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True))
+    print(regplot_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
+    print(regplot_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
     print (regplot_comparison_graph('Switzerland', 'inbound', 'slateblue', y_lim=(-.2, 0.3), show = False, save = True))
     
-    # print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
-    # print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Latvia', 'outbound', 'coral', y_lim=(-.2, 0.3), show = False, save = True))
+    print (regplot_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
 
     # print (line_comparison_graph('France', 'inbound', 'purple', y_lim=(-.2, 0.3), show = False, save = True))
     # print (line_comparison_graph('Slovenia', 'inbound', 'indigo', y_lim=(-.2, 0.3), show = False, save = True))
