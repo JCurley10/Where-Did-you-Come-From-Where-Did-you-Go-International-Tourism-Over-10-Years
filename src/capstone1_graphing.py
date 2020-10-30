@@ -300,7 +300,7 @@ def regplot_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show
 
 # Compare GDP and Country with line graph 
 
-def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.3), show = True, save = False):
+def line_comparison_graph(country, indicator, color, y_lim = (-.2, 0.5), show = True, save = False):
 
     '''
     Makes two line graphs that compare
@@ -386,6 +386,6 @@ if __name__ == '__main__':
     # print (line_comparison_graph('Iceland', 'inbound', 'midnightblue', y_lim=(-.2, 0.5), show = False, save = True))
     # print (line_comparison_graph('Iceland', 'outbound', 'orangered', y_lim=(-.2, 0.5), show = False, save = True))
     # print (line_comparison_graph('Malta', 'outbound', 'tomato', y_lim=(-.2, 0.3), show = False, save = True))
-    print (line_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
+    # print (line_comparison_graph('Romania', 'outbound', 'crimson', y_lim=(-.2, 0.3), show = False, save = True))
     
     pass
