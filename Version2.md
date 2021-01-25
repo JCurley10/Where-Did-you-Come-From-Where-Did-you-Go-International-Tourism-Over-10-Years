@@ -25,6 +25,7 @@ It also seems like the econonmic health of Europe has never been better. But is 
 
 I decided to look into the GDP of a country, specifically the rate of change of GDP, and how that relates to the rate of change of incoming tourists to a country, as well as outgoing tourists from a country.
 
+
 ## The Questions
 
 - Which countries saw the greatest rate of change (positive and negative, if any), and least change, for both incoming and outgoing international travelers between 2008 and 2018?
@@ -99,11 +100,26 @@ The datasets I used come from the [Inbound Tourism and Outbound Tourism sets](ht
 
 ## EDA 
 
-### General Trends of Inbound and Outbound Tourists
+### General Trends of Inbound and Outbound data
 
+#### Looking at the the trend of the countries that reported the most inbound or outbound tourist numbers ever reported. (It turned out, all the highest inbound tourism numbers came from 2018!)
 
-### GDP over time for the 28 European Countries 
+<img src="https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_supply.png" alt="most_incoming_supply" >
 
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand.png" alt = "incoming_no_france">
+
+#### France is a major outlier. Let's see these values without France.
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_incoming_demand_no_france.png" alt = "most_incoming_demand">
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing.png" alt = "most_outgoing">
+
+#### Germany is a major outlier. Let's see these values without Germany
+
+<img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/most_outgoing_no_germany.png" alt = "outgoing_no_germany">
+
+### GDP over time
+#### The cumulative GDP for the 28 European countries examined in this study 
 <img src = "https://github.com/JCurley10/Where-Did-you-Come-From-Where-Did-you-Go-International-Tourism-Over-10-Years/blob/main/images/gdp.png" alt = "GDP">
 
 ## Analysis 
@@ -279,5 +295,3 @@ Another look at Iceland, both inbound and outbound
   - After digging into the type of information collected in the different surveys (Supply or Demand), there was a clear difference in the reported numbers of travelers depending on which survey was used. There is, however, consistency among countries within one type of survey reported. While some countries had reported information from both surveys, others did not. Therefore, I used my discretion and will used the information first from the Supply source. If the country did not report Supply data, I used the Demand source. 
     - Countries whose data come from the Tourism SUPPLY surveys, grouped under ```SUPPLY ```: Austria, Belgium, Czech Republic, Finland, Germany, Greece, Hungary, Italy, Luxembourg, Netherlands, Norway, Poland, Portugal, Slovak Republic, Spain, Switzerland, Bulgaria, Croatia, Estonia, Latvia, Lithuania, Romania, and Slovenia```
     - Countries whose data come from the Tourism DEMAND surveys, grouped under  ```DEMAND```: ```Denmark, France, Iceland, Ireland, Malta, Sweden```
-
-
